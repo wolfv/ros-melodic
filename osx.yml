@@ -14,7 +14,7 @@ stages:
 
         export FEEDSTOCK_NAME=$(basename ${BUILD_REPOSITORY_NAME})
 
-        .scripts/run_osx_build.sh'
+        .scripts/build_osx.sh'
       env:
         ANACONDA_TOKEN: $(ANACONDA_TOKEN)
         CURRENT_BUILD_PKG_NAME: ros-melodic-catkin
@@ -29,7 +29,7 @@ stages:
 
         export FEEDSTOCK_NAME=$(basename ${BUILD_REPOSITORY_NAME})
 
-        .scripts/run_osx_build.sh'
+        .scripts/build_osx.sh'
       env:
         ANACONDA_TOKEN: $(ANACONDA_TOKEN)
         CURRENT_BUILD_PKG_NAME: ros-melodic-genmsg
@@ -44,7 +44,7 @@ stages:
 
         export FEEDSTOCK_NAME=$(basename ${BUILD_REPOSITORY_NAME})
 
-        .scripts/run_osx_build.sh'
+        .scripts/build_osx.sh'
       env:
         ANACONDA_TOKEN: $(ANACONDA_TOKEN)
         CURRENT_BUILD_PKG_NAME: ros-melodic-genpy
@@ -57,7 +57,7 @@ stages:
 
         export FEEDSTOCK_NAME=$(basename ${BUILD_REPOSITORY_NAME})
 
-        .scripts/run_osx_build.sh'
+        .scripts/build_osx.sh'
       env:
         ANACONDA_TOKEN: $(ANACONDA_TOKEN)
         CURRENT_BUILD_PKG_NAME: ros-melodic-cpp-common
@@ -72,7 +72,7 @@ stages:
 
         export FEEDSTOCK_NAME=$(basename ${BUILD_REPOSITORY_NAME})
 
-        .scripts/run_osx_build.sh'
+        .scripts/build_osx.sh'
       env:
         ANACONDA_TOKEN: $(ANACONDA_TOKEN)
         CURRENT_BUILD_PKG_NAME: ros-melodic-rostime
@@ -87,7 +87,7 @@ stages:
 
         export FEEDSTOCK_NAME=$(basename ${BUILD_REPOSITORY_NAME})
 
-        .scripts/run_osx_build.sh'
+        .scripts/build_osx.sh'
       env:
         ANACONDA_TOKEN: $(ANACONDA_TOKEN)
         CURRENT_BUILD_PKG_NAME: ros-melodic-roscpp-traits
@@ -102,7 +102,7 @@ stages:
 
         export FEEDSTOCK_NAME=$(basename ${BUILD_REPOSITORY_NAME})
 
-        .scripts/run_osx_build.sh'
+        .scripts/build_osx.sh'
       env:
         ANACONDA_TOKEN: $(ANACONDA_TOKEN)
         CURRENT_BUILD_PKG_NAME: ros-melodic-roscpp-serialization
@@ -117,7 +117,7 @@ stages:
 
         export FEEDSTOCK_NAME=$(basename ${BUILD_REPOSITORY_NAME})
 
-        .scripts/run_osx_build.sh'
+        .scripts/build_osx.sh'
       env:
         ANACONDA_TOKEN: $(ANACONDA_TOKEN)
         CURRENT_BUILD_PKG_NAME: ros-melodic-message-runtime
