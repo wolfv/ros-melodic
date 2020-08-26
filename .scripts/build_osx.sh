@@ -40,7 +40,7 @@ conda config --add channels conda-forge
 conda config --add channels robostack
 conda config --set channel_priority strict
 
-export "CONDA_BLD_PATH=${FEEDSTOCK_ROOT}/build_artifacts/"
+export "CONDA_BLD_PATH=$CONDA_PREFIX/conda-bld/"
 
 # echo -e "\n\nMaking the build clobber file and running the build."
 # make_build_number ./ ./recipe ./.ci_support/${CONFIG}.yaml
