@@ -6,7 +6,7 @@ source:
   git_rev: release/melodic/catkin/0.7.28-1
   folder: ros-melodic-catkin/src/work
   patches:
-    - /home/wolfv/Programs/ros-melodic/patch/ros-melodic-catkin.patch
+    - patch/ros-melodic-catkin.patch
 
 build:
   script: build_catkin.sh
