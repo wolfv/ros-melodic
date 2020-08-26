@@ -9,10 +9,11 @@ stages:
   - job: ros_melodic_catkin
     steps:
     - task: CondaEnvironment@1
-      inputs: python=3.6 conda-build conda conda-forge::conda-forge-ci-setup=3 pip
-        boa quetz-client
-      installOptions: -c conda-forge -c conda-forge/label/boa_dev
-      updateConda: true
+      inputs:
+        packageSpecs: python=3.6 conda-build conda conda-forge::conda-forge-ci-setup=3
+          pip boa quetz-client
+        installOptions: -c conda-forge -c conda-forge/label/boa_dev
+        updateConda: true
       displayName: Install conda-build and activate environment
     - script: '
 
@@ -65,10 +66,11 @@ stages:
   - job: ros_melodic_genmsg
     steps:
     - task: CondaEnvironment@1
-      inputs: python=3.6 conda-build conda conda-forge::conda-forge-ci-setup=3 pip
-        boa quetz-client
-      installOptions: -c conda-forge -c conda-forge/label/boa_dev
-      updateConda: true
+      inputs:
+        packageSpecs: python=3.6 conda-build conda conda-forge::conda-forge-ci-setup=3
+          pip boa quetz-client
+        installOptions: -c conda-forge -c conda-forge/label/boa_dev
+        updateConda: true
       displayName: Install conda-build and activate environment
     - script: '
 
@@ -121,10 +123,11 @@ stages:
   - job: ros_melodic_genpy
     steps:
     - task: CondaEnvironment@1
-      inputs: python=3.6 conda-build conda conda-forge::conda-forge-ci-setup=3 pip
-        boa quetz-client
-      installOptions: -c conda-forge -c conda-forge/label/boa_dev
-      updateConda: true
+      inputs:
+        packageSpecs: python=3.6 conda-build conda conda-forge::conda-forge-ci-setup=3
+          pip boa quetz-client
+        installOptions: -c conda-forge -c conda-forge/label/boa_dev
+        updateConda: true
       displayName: Install conda-build and activate environment
     - script: '
 
@@ -175,10 +178,11 @@ stages:
   - job: ros_melodic_cpp_common
     steps:
     - task: CondaEnvironment@1
-      inputs: python=3.6 conda-build conda conda-forge::conda-forge-ci-setup=3 pip
-        boa quetz-client
-      installOptions: -c conda-forge -c conda-forge/label/boa_dev
-      updateConda: true
+      inputs:
+        packageSpecs: python=3.6 conda-build conda conda-forge::conda-forge-ci-setup=3
+          pip boa quetz-client
+        installOptions: -c conda-forge -c conda-forge/label/boa_dev
+        updateConda: true
       displayName: Install conda-build and activate environment
     - script: '
 
@@ -231,10 +235,11 @@ stages:
   - job: ros_melodic_rostime
     steps:
     - task: CondaEnvironment@1
-      inputs: python=3.6 conda-build conda conda-forge::conda-forge-ci-setup=3 pip
-        boa quetz-client
-      installOptions: -c conda-forge -c conda-forge/label/boa_dev
-      updateConda: true
+      inputs:
+        packageSpecs: python=3.6 conda-build conda conda-forge::conda-forge-ci-setup=3
+          pip boa quetz-client
+        installOptions: -c conda-forge -c conda-forge/label/boa_dev
+        updateConda: true
       displayName: Install conda-build and activate environment
     - script: '
 
@@ -287,10 +292,11 @@ stages:
   - job: ros_melodic_roscpp_traits
     steps:
     - task: CondaEnvironment@1
-      inputs: python=3.6 conda-build conda conda-forge::conda-forge-ci-setup=3 pip
-        boa quetz-client
-      installOptions: -c conda-forge -c conda-forge/label/boa_dev
-      updateConda: true
+      inputs:
+        packageSpecs: python=3.6 conda-build conda conda-forge::conda-forge-ci-setup=3
+          pip boa quetz-client
+        installOptions: -c conda-forge -c conda-forge/label/boa_dev
+        updateConda: true
       displayName: Install conda-build and activate environment
     - script: '
 
@@ -343,10 +349,11 @@ stages:
   - job: ros_melodic_roscpp_serialization
     steps:
     - task: CondaEnvironment@1
-      inputs: python=3.6 conda-build conda conda-forge::conda-forge-ci-setup=3 pip
-        boa quetz-client
-      installOptions: -c conda-forge -c conda-forge/label/boa_dev
-      updateConda: true
+      inputs:
+        packageSpecs: python=3.6 conda-build conda conda-forge::conda-forge-ci-setup=3
+          pip boa quetz-client
+        installOptions: -c conda-forge -c conda-forge/label/boa_dev
+        updateConda: true
       displayName: Install conda-build and activate environment
     - script: '
 
@@ -399,10 +406,11 @@ stages:
   - job: ros_melodic_message_runtime
     steps:
     - task: CondaEnvironment@1
-      inputs: python=3.6 conda-build conda conda-forge::conda-forge-ci-setup=3 pip
-        boa quetz-client
-      installOptions: -c conda-forge -c conda-forge/label/boa_dev
-      updateConda: true
+      inputs:
+        packageSpecs: python=3.6 conda-build conda conda-forge::conda-forge-ci-setup=3
+          pip boa quetz-client
+        installOptions: -c conda-forge -c conda-forge/label/boa_dev
+        updateConda: true
       displayName: Install conda-build and activate environment
     - script: '
 

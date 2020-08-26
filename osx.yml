@@ -1,7 +1,7 @@
 pool:
   vmImage: macOS-10.15
 trigger:
-- experimental
+- ''
 pr: none
 stages:
 - stage: stage_0
