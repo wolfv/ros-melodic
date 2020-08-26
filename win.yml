@@ -22,13 +22,13 @@ stages:
         call activate base
 
 
-        git clone https://github.com/thesnakepit/boa
+        @rem git clone https://github.com/thesnakepit/boa
 
-        cd boa
+        @rem cd boa
 
-        pip install -e .
+        @rem pip install -e .
 
-        cd ..
+        @rem cd ..
 
 
         conda config --append channels defaults
@@ -79,13 +79,13 @@ stages:
         call activate base
 
 
-        git clone https://github.com/thesnakepit/boa
+        @rem git clone https://github.com/thesnakepit/boa
 
-        cd boa
+        @rem cd boa
 
-        pip install -e .
+        @rem pip install -e .
 
-        cd ..
+        @rem cd ..
 
 
         conda config --append channels defaults
@@ -136,13 +136,13 @@ stages:
         call activate base
 
 
-        git clone https://github.com/thesnakepit/boa
+        @rem git clone https://github.com/thesnakepit/boa
 
-        cd boa
+        @rem cd boa
 
-        pip install -e .
+        @rem pip install -e .
 
-        cd ..
+        @rem cd ..
 
 
         conda config --append channels defaults
@@ -191,13 +191,13 @@ stages:
         call activate base
 
 
-        git clone https://github.com/thesnakepit/boa
+        @rem git clone https://github.com/thesnakepit/boa
 
-        cd boa
+        @rem cd boa
 
-        pip install -e .
+        @rem pip install -e .
 
-        cd ..
+        @rem cd ..
 
 
         conda config --append channels defaults
@@ -248,13 +248,13 @@ stages:
         call activate base
 
 
-        git clone https://github.com/thesnakepit/boa
+        @rem git clone https://github.com/thesnakepit/boa
 
-        cd boa
+        @rem cd boa
 
-        pip install -e .
+        @rem pip install -e .
 
-        cd ..
+        @rem cd ..
 
 
         conda config --append channels defaults
@@ -305,13 +305,13 @@ stages:
         call activate base
 
 
-        git clone https://github.com/thesnakepit/boa
+        @rem git clone https://github.com/thesnakepit/boa
 
-        cd boa
+        @rem cd boa
 
-        pip install -e .
+        @rem pip install -e .
 
-        cd ..
+        @rem cd ..
 
 
         conda config --append channels defaults
@@ -362,13 +362,13 @@ stages:
         call activate base
 
 
-        git clone https://github.com/thesnakepit/boa
+        @rem git clone https://github.com/thesnakepit/boa
 
-        cd boa
+        @rem cd boa
 
-        pip install -e .
+        @rem pip install -e .
 
-        cd ..
+        @rem cd ..
 
 
         conda config --append channels defaults
@@ -419,13 +419,13 @@ stages:
         call activate base
 
 
-        git clone https://github.com/thesnakepit/boa
+        @rem git clone https://github.com/thesnakepit/boa
 
-        cd boa
+        @rem cd boa
 
-        pip install -e .
+        @rem pip install -e .
 
-        cd ..
+        @rem cd ..
 
 
         conda config --append channels defaults
