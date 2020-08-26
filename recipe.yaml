@@ -1,0 +1,695 @@
+package:
+  name: ros
+  version: 2020.08.26
+
+source:
+  - git_url: https://github.com/ros-gbp/catkin-release.git
+    git_rev: release/melodic/catkin/0.7.28-1
+    folder: ros-melodic-catkin/src/work
+    patches:
+      - /home/wolfv/Programs/ros-melodic/patch/ros-melodic-catkin.patch
+  - git_url: https://github.com/ros-gbp/cmake_modules-release.git
+    git_rev: release/melodic/cmake_modules/0.4.2-0
+    folder: ros-melodic-cmake-modules/src/work
+  - git_url: https://github.com/ros-gbp/roscpp_core-release.git
+    git_rev: release/melodic/cpp_common/0.6.14-1
+    folder: ros-melodic-cpp-common/src/work
+  - git_url: https://github.com/ros-gbp/gencpp-release.git
+    git_rev: release/melodic/gencpp/0.6.5-1
+    folder: ros-melodic-gencpp/src/work
+  - git_url: https://github.com/tork-a/geneus-release.git
+    git_rev: release/melodic/geneus/2.2.6-0
+    folder: ros-melodic-geneus/src/work
+  - git_url: https://github.com/ros-gbp/genlisp-release.git
+    git_rev: release/melodic/genlisp/0.4.16-0
+    folder: ros-melodic-genlisp/src/work
+  - git_url: https://github.com/ros-gbp/genmsg-release.git
+    git_rev: release/melodic/genmsg/0.5.16-1
+    folder: ros-melodic-genmsg/src/work
+  - git_url: https://github.com/RethinkRobotics-release/gennodejs-release.git
+    git_rev: release/melodic/gennodejs/2.0.1-0
+    folder: ros-melodic-gennodejs/src/work
+  - git_url: https://github.com/ros-gbp/genpy-release.git
+    git_rev: release/melodic/genpy/0.6.14-1
+    folder: ros-melodic-genpy/src/work
+  - git_url: https://github.com/ros-gbp/message_generation-release.git
+    git_rev: release/melodic/message_generation/0.4.1-1
+    folder: ros-melodic-message-generation/src/work
+  - git_url: https://github.com/ros-gbp/message_runtime-release.git
+    git_rev: release/melodic/message_runtime/0.4.12-0
+    folder: ros-melodic-message-runtime/src/work
+  - git_url: https://github.com/ros-gbp/ros_environment-release.git
+    git_rev: release/melodic/ros_environment/1.2.2-1
+    folder: ros-melodic-ros-environment/src/work
+  - git_url: https://github.com/ros-gbp/ros-release.git
+    git_rev: release/melodic/rosbuild/1.14.9-1
+    folder: ros-melodic-rosbuild/src/work
+  - git_url: https://github.com/ros-gbp/rosconsole-release.git
+    git_rev: release/melodic/rosconsole/1.13.17-1
+    folder: ros-melodic-rosconsole/src/work
+  - git_url: https://github.com/ros-gbp/ros_comm-release.git
+    git_rev: release/melodic/roscpp/1.14.9-1
+    folder: ros-melodic-roscpp/src/work
+  - git_url: https://github.com/ros-gbp/roscpp_core-release.git
+    git_rev: release/melodic/roscpp_serialization/0.6.14-1
+    folder: ros-melodic-roscpp-serialization/src/work
+  - git_url: https://github.com/ros-gbp/roscpp_core-release.git
+    git_rev: release/melodic/roscpp_traits/0.6.14-1
+    folder: ros-melodic-roscpp-traits/src/work
+  - git_url: https://github.com/ros-gbp/ros_comm_msgs-release.git
+    git_rev: release/melodic/rosgraph_msgs/1.11.2-0
+    folder: ros-melodic-rosgraph-msgs/src/work
+  - git_url: https://github.com/ros-gbp/ros-release.git
+    git_rev: release/melodic/roslang/1.14.9-1
+    folder: ros-melodic-roslang/src/work
+  - git_url: https://github.com/ros-gbp/ros-release.git
+    git_rev: release/melodic/roslib/1.14.9-1
+    folder: ros-melodic-roslib/src/work
+  - git_url: https://github.com/ros-gbp/ros-release.git
+    git_rev: release/melodic/rosmake/1.14.9-1
+    folder: ros-melodic-rosmake/src/work
+  - git_url: https://github.com/ros-gbp/rospack-release.git
+    git_rev: release/melodic/rospack/2.5.6-1
+    folder: ros-melodic-rospack/src/work
+  - git_url: https://github.com/ros-gbp/roscpp_core-release.git
+    git_rev: release/melodic/rostime/0.6.14-1
+    folder: ros-melodic-rostime/src/work
+    patches:
+      - /home/wolfv/Programs/ros-melodic/patch/ros-melodic-rostime.patch
+  - git_url: https://github.com/ros-gbp/ros-release.git
+    git_rev: release/melodic/rosunit/1.14.9-1
+    folder: ros-melodic-rosunit/src/work
+  - git_url: https://github.com/ros-gbp/std_msgs-release.git
+    git_rev: release/melodic/std_msgs/0.5.12-0
+    folder: ros-melodic-std-msgs/src/work
+  - git_url: https://github.com/ros-gbp/ros_comm-release.git
+    git_rev: release/melodic/xmlrpcpp/1.14.9-1
+    folder: ros-melodic-xmlrpcpp/src/work
+
+build:
+  number: 1
+
+about:
+  home: https://www.ros.org/
+  license: BSD-3-Clause
+  summary: |
+    Robot Operating System
+
+extra:
+  recipe-maintainers:
+    - ros-forge
+
+outputs:
+  - package:
+      name: ros-melodic-catkin
+      version: 0.7.28
+    requirements:
+      build:
+        - "{{ compiler('cxx') }}"
+        - "{{ compiler('c') }}"
+        - ninja
+        - sel(unix): make
+        - cmake
+      host:
+        - catkin_pkg
+        - cmake
+        - empy
+        - gmock
+        - gtest
+        - mock
+        - nose
+        - python
+        - setuptools
+      run:
+        - catkin_pkg
+        - cmake
+        - empy
+        - gmock
+        - gtest
+        - nose
+        - python
+    build:
+      script: build_catkin.sh
+  - package:
+      name: ros-melodic-cmake-modules
+      version: 0.4.2
+    requirements:
+      build:
+        - "{{ compiler('cxx') }}"
+        - "{{ compiler('c') }}"
+        - ninja
+        - sel(unix): make
+        - cmake
+      host:
+        - python
+        - ros-melodic-catkin
+      run:
+        - python
+    build:
+      script: build_catkin.sh
+  - package:
+      name: ros-melodic-cpp-common
+      version: 0.6.14
+    requirements:
+      build:
+        - "{{ compiler('cxx') }}"
+        - "{{ compiler('c') }}"
+        - ninja
+        - sel(unix): make
+        - cmake
+      host:
+        - boost
+        - console_bridge
+        - python
+        - ros-melodic-catkin
+      run:
+        - boost
+        - console_bridge
+        - python
+    build:
+      script: build_catkin.sh
+  - package:
+      name: ros-melodic-gencpp
+      version: 0.6.5
+    requirements:
+      build:
+        - "{{ compiler('cxx') }}"
+        - "{{ compiler('c') }}"
+        - ninja
+        - sel(unix): make
+        - cmake
+      host:
+        - python
+        - ros-melodic-catkin
+        - ros-melodic-genmsg
+        - setuptools
+      run:
+        - python
+        - ros-melodic-genmsg
+    build:
+      script: build_catkin.sh
+  - package:
+      name: ros-melodic-geneus
+      version: 2.2.6
+    requirements:
+      build:
+        - "{{ compiler('cxx') }}"
+        - "{{ compiler('c') }}"
+        - ninja
+        - sel(unix): make
+        - cmake
+      host:
+        - python
+        - ros-melodic-catkin
+        - ros-melodic-genmsg
+      run:
+        - python
+        - ros-melodic-genmsg
+    build:
+      script: build_catkin.sh
+  - package:
+      name: ros-melodic-genlisp
+      version: 0.4.16
+    requirements:
+      build:
+        - "{{ compiler('cxx') }}"
+        - "{{ compiler('c') }}"
+        - ninja
+        - sel(unix): make
+        - cmake
+      host:
+        - python
+        - ros-melodic-catkin
+        - ros-melodic-genmsg
+      run:
+        - python
+        - ros-melodic-genmsg
+    build:
+      script: build_catkin.sh
+  - package:
+      name: ros-melodic-genmsg
+      version: 0.5.16
+    requirements:
+      build:
+        - "{{ compiler('cxx') }}"
+        - "{{ compiler('c') }}"
+        - ninja
+        - sel(unix): make
+        - cmake
+      host:
+        - python
+        - ros-melodic-catkin
+        - setuptools
+      run:
+        - empy
+        - python
+        - ros-melodic-catkin
+    build:
+      script: build_catkin.sh
+  - package:
+      name: ros-melodic-gennodejs
+      version: 2.0.1
+    requirements:
+      build:
+        - "{{ compiler('cxx') }}"
+        - "{{ compiler('c') }}"
+        - ninja
+        - sel(unix): make
+        - cmake
+      host:
+        - python
+        - ros-melodic-catkin
+        - ros-melodic-genmsg
+      run:
+        - python
+        - ros-melodic-genmsg
+    build:
+      script: build_catkin.sh
+  - package:
+      name: ros-melodic-genpy
+      version: 0.6.14
+    requirements:
+      build:
+        - "{{ compiler('cxx') }}"
+        - "{{ compiler('c') }}"
+        - ninja
+        - sel(unix): make
+        - cmake
+      host:
+        - python
+        - ros-melodic-catkin
+        - ros-melodic-genmsg
+        - setuptools
+      run:
+        - python
+        - pyyaml
+        - ros-melodic-genmsg
+    build:
+      script: build_catkin.sh
+  - package:
+      name: ros-melodic-message-generation
+      version: 0.4.1
+    requirements:
+      build:
+        - "{{ compiler('cxx') }}"
+        - "{{ compiler('c') }}"
+        - ninja
+        - sel(unix): make
+        - cmake
+      host:
+        - python
+        - ros-melodic-catkin
+        - ros-melodic-gencpp
+        - ros-melodic-geneus
+        - ros-melodic-genlisp
+        - ros-melodic-genmsg
+        - ros-melodic-gennodejs
+        - ros-melodic-genpy
+      run:
+        - python
+        - ros-melodic-gencpp
+        - ros-melodic-geneus
+        - ros-melodic-genlisp
+        - ros-melodic-genmsg
+        - ros-melodic-gennodejs
+        - ros-melodic-genpy
+    build:
+      script: build_catkin.sh
+  - package:
+      name: ros-melodic-message-runtime
+      version: 0.4.12
+    requirements:
+      build:
+        - "{{ compiler('cxx') }}"
+        - "{{ compiler('c') }}"
+        - ninja
+        - sel(unix): make
+        - cmake
+      host:
+        - python
+        - ros-melodic-catkin
+        - ros-melodic-cpp-common
+        - ros-melodic-genpy
+        - ros-melodic-roscpp-serialization
+        - ros-melodic-roscpp-traits
+        - ros-melodic-rostime
+      run:
+        - python
+        - ros-melodic-cpp-common
+        - ros-melodic-genpy
+        - ros-melodic-roscpp-serialization
+        - ros-melodic-roscpp-traits
+        - ros-melodic-rostime
+    build:
+      script: build_catkin.sh
+  - package:
+      name: ros-melodic-ros-environment
+      version: 1.2.2
+    requirements:
+      build:
+        - "{{ compiler('cxx') }}"
+        - "{{ compiler('c') }}"
+        - ninja
+        - sel(unix): make
+        - cmake
+      host:
+        - python
+        - ros-melodic-catkin
+      run:
+        - python
+    build:
+      script: build_catkin.sh
+  - package:
+      name: ros-melodic-rosbuild
+      version: 1.14.9
+    requirements:
+      build:
+        - "{{ compiler('cxx') }}"
+        - "{{ compiler('c') }}"
+        - ninja
+        - sel(unix): make
+        - cmake
+      host:
+        - pkg-config
+        - python
+        - ros-melodic-catkin
+        - ros-melodic-message-generation
+        - ros-melodic-message-runtime
+      run:
+        - python
+        - ros-melodic-catkin
+        - ros-melodic-message-generation
+        - ros-melodic-message-runtime
+    build:
+      script: build_catkin.sh
+  - package:
+      name: ros-melodic-rosconsole
+      version: 1.13.17
+    requirements:
+      build:
+        - "{{ compiler('cxx') }}"
+        - "{{ compiler('c') }}"
+        - ninja
+        - sel(unix): make
+        - cmake
+      host:
+        - apr
+        - boost-cpp
+        - log4cxx
+        - python
+        - ros-melodic-catkin
+        - ros-melodic-cpp-common
+        - ros-melodic-rosbuild
+        - ros-melodic-rostime
+        - ros-melodic-rosunit
+      run:
+        - apr
+        - boost-cpp
+        - log4cxx
+        - python
+        - ros-melodic-cpp-common
+        - ros-melodic-rosbuild
+        - ros-melodic-rostime
+    build:
+      script: build_catkin.sh
+  - package:
+      name: ros-melodic-roscpp
+      version: 1.14.9
+    requirements:
+      build:
+        - "{{ compiler('cxx') }}"
+        - "{{ compiler('c') }}"
+        - ninja
+        - sel(unix): make
+        - cmake
+      host:
+        - pkg-config
+        - python
+        - ros-melodic-catkin
+        - ros-melodic-cpp-common
+        - ros-melodic-message-generation
+        - ros-melodic-message-runtime
+        - ros-melodic-rosconsole
+        - ros-melodic-roscpp-serialization
+        - ros-melodic-roscpp-traits
+        - ros-melodic-rosgraph-msgs
+        - ros-melodic-roslang
+        - ros-melodic-rostime
+        - ros-melodic-std-msgs
+        - ros-melodic-xmlrpcpp
+      run:
+        - python
+        - ros-melodic-cpp-common
+        - ros-melodic-message-runtime
+        - ros-melodic-rosconsole
+        - ros-melodic-roscpp-serialization
+        - ros-melodic-roscpp-traits
+        - ros-melodic-rosgraph-msgs
+        - ros-melodic-rostime
+        - ros-melodic-std-msgs
+        - ros-melodic-xmlrpcpp
+    build:
+      script: build_catkin.sh
+  - package:
+      name: ros-melodic-roscpp-serialization
+      version: 0.6.14
+    requirements:
+      build:
+        - "{{ compiler('cxx') }}"
+        - "{{ compiler('c') }}"
+        - ninja
+        - sel(unix): make
+        - cmake
+      host:
+        - python
+        - ros-melodic-catkin
+        - ros-melodic-cpp-common
+        - ros-melodic-roscpp-traits
+        - ros-melodic-rostime
+      run:
+        - python
+        - ros-melodic-cpp-common
+        - ros-melodic-roscpp-traits
+        - ros-melodic-rostime
+    build:
+      script: build_catkin.sh
+  - package:
+      name: ros-melodic-roscpp-traits
+      version: 0.6.14
+    requirements:
+      build:
+        - "{{ compiler('cxx') }}"
+        - "{{ compiler('c') }}"
+        - ninja
+        - sel(unix): make
+        - cmake
+      host:
+        - python
+        - ros-melodic-catkin
+        - ros-melodic-cpp-common
+        - ros-melodic-rostime
+      run:
+        - python
+        - ros-melodic-cpp-common
+        - ros-melodic-rostime
+    build:
+      script: build_catkin.sh
+  - package:
+      name: ros-melodic-rosgraph-msgs
+      version: 1.11.2
+    requirements:
+      build:
+        - "{{ compiler('cxx') }}"
+        - "{{ compiler('c') }}"
+        - ninja
+        - sel(unix): make
+        - cmake
+      host:
+        - python
+        - ros-melodic-catkin
+        - ros-melodic-message-generation
+        - ros-melodic-message-runtime
+        - ros-melodic-std-msgs
+      run:
+        - python
+        - ros-melodic-message-runtime
+        - ros-melodic-std-msgs
+    build:
+      script: build_catkin.sh
+  - package:
+      name: ros-melodic-roslang
+      version: 1.14.9
+    requirements:
+      build:
+        - "{{ compiler('cxx') }}"
+        - "{{ compiler('c') }}"
+        - ninja
+        - sel(unix): make
+        - cmake
+      host:
+        - python
+        - ros-melodic-catkin
+        - ros-melodic-genmsg
+      run:
+        - python
+        - ros-melodic-catkin
+        - ros-melodic-genmsg
+    build:
+      script: build_catkin.sh
+  - package:
+      name: ros-melodic-roslib
+      version: 1.14.9
+    requirements:
+      build:
+        - "{{ compiler('cxx') }}"
+        - "{{ compiler('c') }}"
+        - ninja
+        - sel(unix): make
+        - cmake
+      host:
+        - boost-cpp
+        - python
+        - ros-melodic-catkin
+        - ros-melodic-rosmake
+        - ros-melodic-rospack
+        - setuptools
+      run:
+        - python
+        - ros-melodic-catkin
+        - ros-melodic-ros-environment
+        - ros-melodic-rospack
+        - rospkg
+    build:
+      script: build_catkin.sh
+  - package:
+      name: ros-melodic-rosmake
+      version: 1.14.9
+    requirements:
+      build:
+        - "{{ compiler('cxx') }}"
+        - "{{ compiler('c') }}"
+        - ninja
+        - sel(unix): make
+        - cmake
+      host:
+        - python
+        - ros-melodic-catkin
+        - setuptools
+      run:
+        - python
+        - ros-melodic-catkin
+        - rospkg
+    build:
+      script: build_catkin.sh
+  - package:
+      name: ros-melodic-rospack
+      version: 2.5.6
+    requirements:
+      build:
+        - "{{ compiler('cxx') }}"
+        - "{{ compiler('c') }}"
+        - ninja
+        - sel(unix): make
+        - cmake
+      host:
+        - boost
+        - coverage
+        - gtest
+        - pkg-config
+        - python
+        - ros-melodic-catkin
+        - ros-melodic-cmake-modules
+        - tinyxml2
+      run:
+        - boost
+        - catkin_pkg
+        - pkg-config
+        - python
+        - ros-melodic-ros-environment
+        - rosdep
+        - tinyxml2
+    build:
+      script: build_catkin.sh
+  - package:
+      name: ros-melodic-rostime
+      version: 0.6.14
+    requirements:
+      build:
+        - "{{ compiler('cxx') }}"
+        - "{{ compiler('c') }}"
+        - ninja
+        - sel(unix): make
+        - cmake
+      host:
+        - boost
+        - python
+        - ros-melodic-catkin
+        - ros-melodic-cpp-common
+      run:
+        - boost
+        - python
+        - ros-melodic-cpp-common
+    build:
+      script: build_catkin.sh
+  - package:
+      name: ros-melodic-rosunit
+      version: 1.14.9
+    requirements:
+      build:
+        - "{{ compiler('cxx') }}"
+        - "{{ compiler('c') }}"
+        - ninja
+        - sel(unix): make
+        - cmake
+      host:
+        - python
+        - ros-melodic-catkin
+        - setuptools
+      run:
+        - python
+        - ros-melodic-roslib
+        - rospkg
+    build:
+      script: build_catkin.sh
+  - package:
+      name: ros-melodic-std-msgs
+      version: 0.5.12
+    requirements:
+      build:
+        - "{{ compiler('cxx') }}"
+        - "{{ compiler('c') }}"
+        - ninja
+        - sel(unix): make
+        - cmake
+      host:
+        - python
+        - ros-melodic-catkin
+        - ros-melodic-message-generation
+        - ros-melodic-message-runtime
+      run:
+        - python
+        - ros-melodic-message-runtime
+    build:
+      script: build_catkin.sh
+  - package:
+      name: ros-melodic-xmlrpcpp
+      version: 1.14.9
+    requirements:
+      build:
+        - "{{ compiler('cxx') }}"
+        - "{{ compiler('c') }}"
+        - ninja
+        - sel(unix): make
+        - cmake
+      host:
+        - boost
+        - python
+        - ros-melodic-catkin
+        - ros-melodic-cpp-common
+        - ros-melodic-rostime
+      run:
+        - python
+        - ros-melodic-cpp-common
+        - ros-melodic-rostime
+    build:
+      script: build_catkin.sh

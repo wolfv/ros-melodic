@@ -7,7 +7,7 @@ conda_index:
 
 build_number: 1
 
-skip_all_deps: true
+skip_all_deps: false
 
 packages_skip_by_deps:
   # - ros_core
@@ -20,14 +20,13 @@ packages_remove_from_deps:
 
 skip_existing:
   # - https://conda.anaconda.org/robostack/
-  # - C:/Users/wolfv/Miniconda3/conda-bld/win-64/repodata.json
   # - /home/wolfv/miniconda3/conda-bld/linux-64/repodata.json
   # - /home/ubuntu/miniconda3/conda-bld/linux-64/repodata.json
 
 packages_select_by_deps:
   # - catkin
   # - message_runtime
-  # - roscpp
+  - roscpp
   # - ros_core
   # - ros_base
   # - rviz_visual_tools
@@ -42,10 +41,10 @@ packages_select_by_deps:
 
   # - moveit
 
-  - class_loader
+  # - class_loader
+  # - libfranka
 
   # - niryo_one_simulation
-  - libfranka
   # - franka_ros # doesn't work on osx
 
   # - cv_bridge
