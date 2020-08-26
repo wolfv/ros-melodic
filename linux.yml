@@ -186,4 +186,5 @@ stages:
         ANACONDA_TOKEN: $(ANACONDA_TOKEN)
       script: .scripts/build_linux.sh
   stage: stage_14
-trigger: experimental
+trigger:
+- experimental
