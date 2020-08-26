@@ -68,7 +68,6 @@ export UPLOAD_PACKAGES="${UPLOAD_PACKAGES:-True}"
 docker run ${DOCKER_RUN_ARGS} \
            -v "${RECIPE_ROOT}":/home/conda/recipe_root:rw,z \
            -v "${FEEDSTOCK_ROOT}":/home/conda/feedstock_root:rw,z \
-           # -e CONFIG \
            -e HOST_USER_ID \
            -e UPLOAD_PACKAGES \
            -e GIT_BRANCH \
@@ -82,6 +81,8 @@ docker run ${DOCKER_RUN_ARGS} \
            $DOCKER_IMAGE \
            bash \
            /home/conda/feedstock_root/${PROVIDER_DIR}/build_steps.sh
+
+           # -e CONFIG \
 
 # verify that the end of the script was reached
 # test -f "$DONE_CANARY"
