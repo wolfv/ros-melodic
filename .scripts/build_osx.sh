@@ -49,7 +49,6 @@ conda info
 conda config --show-sources
 conda list --show-channel-urls
 
-cd ${FEEDSTOCK_ROOT}
 cp recipes/${CURRENT_BUILD_PKG_NAME}.yaml ./recipe.yaml
 
 boa build .
