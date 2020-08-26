@@ -1,7 +1,10 @@
+trigger:
+- experimental
+pr: none
 stages:
 - stage: stage_0
   jobs:
-  - job: ros-melodic-catkin
+  - job: ros_melodic_roscpp
     steps:
     - script: .scripts/build_linux.sh
       env:
@@ -9,7 +12,7 @@ stages:
       displayName: Build ros-melodic-catkin
 - stage: stage_1
   jobs:
-  - job: ros-melodic-genmsg
+  - job: ros_melodic_catkin
     steps:
     - script: .scripts/build_linux.sh
       env:
@@ -17,31 +20,31 @@ stages:
       displayName: Build ros-melodic-genmsg
 - stage: stage_2
   jobs:
-  - job: ros-melodic-gencpp
+  - job: ros_melodic_genmsg
     steps:
     - script: .scripts/build_linux.sh
       env:
         ANACONDA_TOKEN: $(ANACONDA_TOKEN)
       displayName: Build ros-melodic-gencpp
-  - job: ros-melodic-geneus
+  - job: ros_melodic_genmsg
     steps:
     - script: .scripts/build_linux.sh
       env:
         ANACONDA_TOKEN: $(ANACONDA_TOKEN)
       displayName: Build ros-melodic-geneus
-  - job: ros-melodic-genlisp
+  - job: ros_melodic_genmsg
     steps:
     - script: .scripts/build_linux.sh
       env:
         ANACONDA_TOKEN: $(ANACONDA_TOKEN)
       displayName: Build ros-melodic-genlisp
-  - job: ros-melodic-gennodejs
+  - job: ros_melodic_genmsg
     steps:
     - script: .scripts/build_linux.sh
       env:
         ANACONDA_TOKEN: $(ANACONDA_TOKEN)
       displayName: Build ros-melodic-gennodejs
-  - job: ros-melodic-genpy
+  - job: ros_melodic_genmsg
     steps:
     - script: .scripts/build_linux.sh
       env:
@@ -49,13 +52,13 @@ stages:
       displayName: Build ros-melodic-genpy
 - stage: stage_3
   jobs:
-  - job: ros-melodic-message-generation
+  - job: ros_melodic_genpy
     steps:
     - script: .scripts/build_linux.sh
       env:
         ANACONDA_TOKEN: $(ANACONDA_TOKEN)
       displayName: Build ros-melodic-message-generation
-  - job: ros-melodic-cpp-common
+  - job: ros_melodic_genpy
     steps:
     - script: .scripts/build_linux.sh
       env:
@@ -63,7 +66,7 @@ stages:
       displayName: Build ros-melodic-cpp-common
 - stage: stage_4
   jobs:
-  - job: ros-melodic-rostime
+  - job: ros_melodic_cpp_common
     steps:
     - script: .scripts/build_linux.sh
       env:
@@ -71,7 +74,7 @@ stages:
       displayName: Build ros-melodic-rostime
 - stage: stage_5
   jobs:
-  - job: ros-melodic-roscpp-traits
+  - job: ros_melodic_rostime
     steps:
     - script: .scripts/build_linux.sh
       env:
@@ -79,7 +82,7 @@ stages:
       displayName: Build ros-melodic-roscpp-traits
 - stage: stage_6
   jobs:
-  - job: ros-melodic-roscpp-serialization
+  - job: ros_melodic_roscpp_traits
     steps:
     - script: .scripts/build_linux.sh
       env:
@@ -87,7 +90,7 @@ stages:
       displayName: Build ros-melodic-roscpp-serialization
 - stage: stage_7
   jobs:
-  - job: ros-melodic-message-runtime
+  - job: ros_melodic_roscpp_serialization
     steps:
     - script: .scripts/build_linux.sh
       env:
@@ -95,25 +98,25 @@ stages:
       displayName: Build ros-melodic-message-runtime
 - stage: stage_8
   jobs:
-  - job: ros-melodic-rosbuild
+  - job: ros_melodic_message_runtime
     steps:
     - script: .scripts/build_linux.sh
       env:
         ANACONDA_TOKEN: $(ANACONDA_TOKEN)
       displayName: Build ros-melodic-rosbuild
-  - job: ros-melodic-rosmake
+  - job: ros_melodic_message_runtime
     steps:
     - script: .scripts/build_linux.sh
       env:
         ANACONDA_TOKEN: $(ANACONDA_TOKEN)
       displayName: Build ros-melodic-rosmake
-  - job: ros-melodic-cmake-modules
+  - job: ros_melodic_message_runtime
     steps:
     - script: .scripts/build_linux.sh
       env:
         ANACONDA_TOKEN: $(ANACONDA_TOKEN)
       displayName: Build ros-melodic-cmake-modules
-  - job: ros-melodic-ros-environment
+  - job: ros_melodic_message_runtime
     steps:
     - script: .scripts/build_linux.sh
       env:
@@ -121,7 +124,7 @@ stages:
       displayName: Build ros-melodic-ros-environment
 - stage: stage_9
   jobs:
-  - job: ros-melodic-rospack
+  - job: ros_melodic_ros_environment
     steps:
     - script: .scripts/build_linux.sh
       env:
@@ -129,7 +132,7 @@ stages:
       displayName: Build ros-melodic-rospack
 - stage: stage_10
   jobs:
-  - job: ros-melodic-roslib
+  - job: ros_melodic_rospack
     steps:
     - script: .scripts/build_linux.sh
       env:
@@ -137,7 +140,7 @@ stages:
       displayName: Build ros-melodic-roslib
 - stage: stage_11
   jobs:
-  - job: ros-melodic-rosunit
+  - job: ros_melodic_roslib
     steps:
     - script: .scripts/build_linux.sh
       env:
@@ -145,13 +148,13 @@ stages:
       displayName: Build ros-melodic-rosunit
 - stage: stage_12
   jobs:
-  - job: ros-melodic-rosconsole
+  - job: ros_melodic_rosunit
     steps:
     - script: .scripts/build_linux.sh
       env:
         ANACONDA_TOKEN: $(ANACONDA_TOKEN)
       displayName: Build ros-melodic-rosconsole
-  - job: ros-melodic-std-msgs
+  - job: ros_melodic_rosunit
     steps:
     - script: .scripts/build_linux.sh
       env:
@@ -159,19 +162,19 @@ stages:
       displayName: Build ros-melodic-std-msgs
 - stage: stage_13
   jobs:
-  - job: ros-melodic-rosgraph-msgs
+  - job: ros_melodic_std_msgs
     steps:
     - script: .scripts/build_linux.sh
       env:
         ANACONDA_TOKEN: $(ANACONDA_TOKEN)
       displayName: Build ros-melodic-rosgraph-msgs
-  - job: ros-melodic-roslang
+  - job: ros_melodic_std_msgs
     steps:
     - script: .scripts/build_linux.sh
       env:
         ANACONDA_TOKEN: $(ANACONDA_TOKEN)
       displayName: Build ros-melodic-roslang
-  - job: ros-melodic-xmlrpcpp
+  - job: ros_melodic_std_msgs
     steps:
     - script: .scripts/build_linux.sh
       env:
@@ -179,12 +182,9 @@ stages:
       displayName: Build ros-melodic-xmlrpcpp
 - stage: stage_14
   jobs:
-  - job: ros-melodic-roscpp
+  - job: ros_melodic_xmlrpcpp
     steps:
     - script: .scripts/build_linux.sh
       env:
         ANACONDA_TOKEN: $(ANACONDA_TOKEN)
       displayName: Build ros-melodic-roscpp
-trigger:
-- experimental
-pr: none
