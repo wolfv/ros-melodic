@@ -1,0 +1,452 @@
+pool:
+  vmImage: vs2017-win2016
+trigger:
+- experimental
+pr: none
+stages:
+- stage: stage_0
+  jobs:
+  - job: ros_melodic_catkin
+    steps:
+    - task: CondaEnvironment@1
+      inputs: python=3.6 conda-build conda conda-forge::conda-forge-ci-setup=3 pip
+        boa quetz-client
+      installOptions: -c conda-forge -c conda-forge/label/boa_dev
+      updateConda: true
+      displayName: Install conda-build and activate environment
+    - script: '
+
+        set "CI=azure"
+
+        call activate base
+
+
+        git clone https://github.com/thesnakepit/boa
+
+        cd boa
+
+        pip install -e .
+
+        cd ..
+
+
+        conda config --append channels defaults
+
+        conda config --add channels conda-forge
+
+        conda config --add channels robostack
+
+        conda config --set channel_priority strict
+
+
+        conda info
+
+        conda config --show-sources
+
+        conda list --show-channel-urls
+
+
+        cp recipes/%CURRENT_BUILD_PKG_NAME%.yaml ./recipe.yaml
+
+
+        boa build .
+
+
+        @rem conda.exe build "recipe" -m .ci_support/%CONFIG%.yaml
+
+        '
+      env:
+        ANACONDA_TOKEN: $(ANACONDA_TOKEN)
+        CURRENT_BUILD_PKG_NAME: ros-melodic-catkin
+        PYTHONUNBUFFERED: 1
+      displayName: Build ros-melodic-catkin
+- stage: stage_1
+  jobs:
+  - job: ros_melodic_genmsg
+    steps:
+    - task: CondaEnvironment@1
+      inputs: python=3.6 conda-build conda conda-forge::conda-forge-ci-setup=3 pip
+        boa quetz-client
+      installOptions: -c conda-forge -c conda-forge/label/boa_dev
+      updateConda: true
+      displayName: Install conda-build and activate environment
+    - script: '
+
+        set "CI=azure"
+
+        call activate base
+
+
+        git clone https://github.com/thesnakepit/boa
+
+        cd boa
+
+        pip install -e .
+
+        cd ..
+
+
+        conda config --append channels defaults
+
+        conda config --add channels conda-forge
+
+        conda config --add channels robostack
+
+        conda config --set channel_priority strict
+
+
+        conda info
+
+        conda config --show-sources
+
+        conda list --show-channel-urls
+
+
+        cp recipes/%CURRENT_BUILD_PKG_NAME%.yaml ./recipe.yaml
+
+
+        boa build .
+
+
+        @rem conda.exe build "recipe" -m .ci_support/%CONFIG%.yaml
+
+        '
+      env:
+        ANACONDA_TOKEN: $(ANACONDA_TOKEN)
+        CURRENT_BUILD_PKG_NAME: ros-melodic-genmsg
+        PYTHONUNBUFFERED: 1
+      displayName: Build ros-melodic-genmsg
+- stage: stage_2
+  jobs:
+  - job: ros_melodic_genpy
+    steps:
+    - task: CondaEnvironment@1
+      inputs: python=3.6 conda-build conda conda-forge::conda-forge-ci-setup=3 pip
+        boa quetz-client
+      installOptions: -c conda-forge -c conda-forge/label/boa_dev
+      updateConda: true
+      displayName: Install conda-build and activate environment
+    - script: '
+
+        set "CI=azure"
+
+        call activate base
+
+
+        git clone https://github.com/thesnakepit/boa
+
+        cd boa
+
+        pip install -e .
+
+        cd ..
+
+
+        conda config --append channels defaults
+
+        conda config --add channels conda-forge
+
+        conda config --add channels robostack
+
+        conda config --set channel_priority strict
+
+
+        conda info
+
+        conda config --show-sources
+
+        conda list --show-channel-urls
+
+
+        cp recipes/%CURRENT_BUILD_PKG_NAME%.yaml ./recipe.yaml
+
+
+        boa build .
+
+
+        @rem conda.exe build "recipe" -m .ci_support/%CONFIG%.yaml
+
+        '
+      env:
+        ANACONDA_TOKEN: $(ANACONDA_TOKEN)
+        CURRENT_BUILD_PKG_NAME: ros-melodic-genpy
+        PYTHONUNBUFFERED: 1
+      displayName: Build ros-melodic-genpy
+  - job: ros_melodic_cpp_common
+    steps:
+    - task: CondaEnvironment@1
+      inputs: python=3.6 conda-build conda conda-forge::conda-forge-ci-setup=3 pip
+        boa quetz-client
+      installOptions: -c conda-forge -c conda-forge/label/boa_dev
+      updateConda: true
+      displayName: Install conda-build and activate environment
+    - script: '
+
+        set "CI=azure"
+
+        call activate base
+
+
+        git clone https://github.com/thesnakepit/boa
+
+        cd boa
+
+        pip install -e .
+
+        cd ..
+
+
+        conda config --append channels defaults
+
+        conda config --add channels conda-forge
+
+        conda config --add channels robostack
+
+        conda config --set channel_priority strict
+
+
+        conda info
+
+        conda config --show-sources
+
+        conda list --show-channel-urls
+
+
+        cp recipes/%CURRENT_BUILD_PKG_NAME%.yaml ./recipe.yaml
+
+
+        boa build .
+
+
+        @rem conda.exe build "recipe" -m .ci_support/%CONFIG%.yaml
+
+        '
+      env:
+        ANACONDA_TOKEN: $(ANACONDA_TOKEN)
+        CURRENT_BUILD_PKG_NAME: ros-melodic-cpp-common
+        PYTHONUNBUFFERED: 1
+      displayName: Build ros-melodic-cpp-common
+- stage: stage_3
+  jobs:
+  - job: ros_melodic_rostime
+    steps:
+    - task: CondaEnvironment@1
+      inputs: python=3.6 conda-build conda conda-forge::conda-forge-ci-setup=3 pip
+        boa quetz-client
+      installOptions: -c conda-forge -c conda-forge/label/boa_dev
+      updateConda: true
+      displayName: Install conda-build and activate environment
+    - script: '
+
+        set "CI=azure"
+
+        call activate base
+
+
+        git clone https://github.com/thesnakepit/boa
+
+        cd boa
+
+        pip install -e .
+
+        cd ..
+
+
+        conda config --append channels defaults
+
+        conda config --add channels conda-forge
+
+        conda config --add channels robostack
+
+        conda config --set channel_priority strict
+
+
+        conda info
+
+        conda config --show-sources
+
+        conda list --show-channel-urls
+
+
+        cp recipes/%CURRENT_BUILD_PKG_NAME%.yaml ./recipe.yaml
+
+
+        boa build .
+
+
+        @rem conda.exe build "recipe" -m .ci_support/%CONFIG%.yaml
+
+        '
+      env:
+        ANACONDA_TOKEN: $(ANACONDA_TOKEN)
+        CURRENT_BUILD_PKG_NAME: ros-melodic-rostime
+        PYTHONUNBUFFERED: 1
+      displayName: Build ros-melodic-rostime
+- stage: stage_4
+  jobs:
+  - job: ros_melodic_roscpp_traits
+    steps:
+    - task: CondaEnvironment@1
+      inputs: python=3.6 conda-build conda conda-forge::conda-forge-ci-setup=3 pip
+        boa quetz-client
+      installOptions: -c conda-forge -c conda-forge/label/boa_dev
+      updateConda: true
+      displayName: Install conda-build and activate environment
+    - script: '
+
+        set "CI=azure"
+
+        call activate base
+
+
+        git clone https://github.com/thesnakepit/boa
+
+        cd boa
+
+        pip install -e .
+
+        cd ..
+
+
+        conda config --append channels defaults
+
+        conda config --add channels conda-forge
+
+        conda config --add channels robostack
+
+        conda config --set channel_priority strict
+
+
+        conda info
+
+        conda config --show-sources
+
+        conda list --show-channel-urls
+
+
+        cp recipes/%CURRENT_BUILD_PKG_NAME%.yaml ./recipe.yaml
+
+
+        boa build .
+
+
+        @rem conda.exe build "recipe" -m .ci_support/%CONFIG%.yaml
+
+        '
+      env:
+        ANACONDA_TOKEN: $(ANACONDA_TOKEN)
+        CURRENT_BUILD_PKG_NAME: ros-melodic-roscpp-traits
+        PYTHONUNBUFFERED: 1
+      displayName: Build ros-melodic-roscpp-traits
+- stage: stage_5
+  jobs:
+  - job: ros_melodic_roscpp_serialization
+    steps:
+    - task: CondaEnvironment@1
+      inputs: python=3.6 conda-build conda conda-forge::conda-forge-ci-setup=3 pip
+        boa quetz-client
+      installOptions: -c conda-forge -c conda-forge/label/boa_dev
+      updateConda: true
+      displayName: Install conda-build and activate environment
+    - script: '
+
+        set "CI=azure"
+
+        call activate base
+
+
+        git clone https://github.com/thesnakepit/boa
+
+        cd boa
+
+        pip install -e .
+
+        cd ..
+
+
+        conda config --append channels defaults
+
+        conda config --add channels conda-forge
+
+        conda config --add channels robostack
+
+        conda config --set channel_priority strict
+
+
+        conda info
+
+        conda config --show-sources
+
+        conda list --show-channel-urls
+
+
+        cp recipes/%CURRENT_BUILD_PKG_NAME%.yaml ./recipe.yaml
+
+
+        boa build .
+
+
+        @rem conda.exe build "recipe" -m .ci_support/%CONFIG%.yaml
+
+        '
+      env:
+        ANACONDA_TOKEN: $(ANACONDA_TOKEN)
+        CURRENT_BUILD_PKG_NAME: ros-melodic-roscpp-serialization
+        PYTHONUNBUFFERED: 1
+      displayName: Build ros-melodic-roscpp-serialization
+- stage: stage_6
+  jobs:
+  - job: ros_melodic_message_runtime
+    steps:
+    - task: CondaEnvironment@1
+      inputs: python=3.6 conda-build conda conda-forge::conda-forge-ci-setup=3 pip
+        boa quetz-client
+      installOptions: -c conda-forge -c conda-forge/label/boa_dev
+      updateConda: true
+      displayName: Install conda-build and activate environment
+    - script: '
+
+        set "CI=azure"
+
+        call activate base
+
+
+        git clone https://github.com/thesnakepit/boa
+
+        cd boa
+
+        pip install -e .
+
+        cd ..
+
+
+        conda config --append channels defaults
+
+        conda config --add channels conda-forge
+
+        conda config --add channels robostack
+
+        conda config --set channel_priority strict
+
+
+        conda info
+
+        conda config --show-sources
+
+        conda list --show-channel-urls
+
+
+        cp recipes/%CURRENT_BUILD_PKG_NAME%.yaml ./recipe.yaml
+
+
+        boa build .
+
+
+        @rem conda.exe build "recipe" -m .ci_support/%CONFIG%.yaml
+
+        '
+      env:
+        ANACONDA_TOKEN: $(ANACONDA_TOKEN)
+        CURRENT_BUILD_PKG_NAME: ros-melodic-message-runtime
+        PYTHONUNBUFFERED: 1
+      displayName: Build ros-melodic-message-runtime
