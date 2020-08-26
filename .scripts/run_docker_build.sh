@@ -31,16 +31,16 @@ fi
 
 ARTIFACTS="$FEEDSTOCK_ROOT/build_artifacts"
 
-if [ -z "$CONFIG" ]; then
-    set +x
-    FILES=`ls .ci_support/linux_*`
-    CONFIGS=""
-    for file in $FILES; do
-        CONFIGS="${CONFIGS}'${file:12:-5}' or ";
-    done
-    echo "Need to set CONFIG env variable. Value can be one of ${CONFIGS:0:-4}"
-    exit 1
-fi
+# if [ -z "$CONFIG" ]; then
+#     set +x
+#     FILES=`ls .ci_support/linux_*`
+#     CONFIGS=""
+#     for file in $FILES; do
+#         CONFIGS="${CONFIGS}'${file:12:-5}' or ";
+#     done
+#     echo "Need to set CONFIG env variable. Value can be one of ${CONFIGS:0:-4}"
+#     exit 1
+# fi
 
 # if [ -z "${DOCKER_IMAGE}" ]; then
 #     SHYAML_INSTALLED="$(shyaml -h || echo NO)"
@@ -55,8 +55,8 @@ fi
 DOCKER_IMAGE="condaforge/linux-anvil-comp7"
 
 mkdir -p "$ARTIFACTS"
-DONE_CANARY="$ARTIFACTS/conda-forge-build-done-${CONFIG}"
-rm -f "$DONE_CANARY"
+# DONE_CANARY="$ARTIFACTS/conda-forge-build-done-${CONFIG}"
+# rm -f "$DONE_CANARY"
 
 # Allow people to specify extra default arguments to `docker run` (e.g. `--rm`)
 DOCKER_RUN_ARGS="${CONDA_FORGE_DOCKER_RUN_ARGS}"
@@ -68,7 +68,7 @@ export UPLOAD_PACKAGES="${UPLOAD_PACKAGES:-True}"
 docker run ${DOCKER_RUN_ARGS} \
            -v "${RECIPE_ROOT}":/home/conda/recipe_root:rw,z \
            -v "${FEEDSTOCK_ROOT}":/home/conda/feedstock_root:rw,z \
-           -e CONFIG \
+           # -e CONFIG \
            -e HOST_USER_ID \
            -e UPLOAD_PACKAGES \
            -e GIT_BRANCH \
@@ -84,4 +84,4 @@ docker run ${DOCKER_RUN_ARGS} \
            /home/conda/feedstock_root/${PROVIDER_DIR}/build_steps.sh
 
 # verify that the end of the script was reached
-test -f "$DONE_CANARY"
+# test -f "$DONE_CANARY"
