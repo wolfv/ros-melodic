@@ -80,7 +80,7 @@ docker run ${DOCKER_RUN_ARGS} \
            -e STAGING_BINSTAR_TOKEN \
            $DOCKER_IMAGE \
            bash \
-           /home/conda/feedstock_root/${PROVIDER_DIR}/build_steps.sh
+           /home/conda/feedstock_root/${PROVIDER_DIR}/build_linux.sh
 
            # -e CONFIG \
 
