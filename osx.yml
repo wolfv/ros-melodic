@@ -1,0 +1,124 @@
+pool:
+  vmImage: macOS-10.15
+trigger:
+- experimental
+pr: none
+stages:
+- stage: stage_0
+  jobs:
+  - job: ros_melodic_catkin
+    steps:
+    - script: 'export CI=azure
+
+        export GIT_BRANCH=$BUILD_SOURCEBRANCHNAME
+
+        export FEEDSTOCK_NAME=$(basename ${BUILD_REPOSITORY_NAME})
+
+        .scripts/run_osx_build.sh'
+      env:
+        ANACONDA_TOKEN: $(ANACONDA_TOKEN)
+        CURRENT_BUILD_PKG_NAME: ros-melodic-catkin
+      displayName: Build ros-melodic-catkin
+- stage: stage_1
+  jobs:
+  - job: ros_melodic_genmsg
+    steps:
+    - script: 'export CI=azure
+
+        export GIT_BRANCH=$BUILD_SOURCEBRANCHNAME
+
+        export FEEDSTOCK_NAME=$(basename ${BUILD_REPOSITORY_NAME})
+
+        .scripts/run_osx_build.sh'
+      env:
+        ANACONDA_TOKEN: $(ANACONDA_TOKEN)
+        CURRENT_BUILD_PKG_NAME: ros-melodic-genmsg
+      displayName: Build ros-melodic-genmsg
+- stage: stage_2
+  jobs:
+  - job: ros_melodic_genpy
+    steps:
+    - script: 'export CI=azure
+
+        export GIT_BRANCH=$BUILD_SOURCEBRANCHNAME
+
+        export FEEDSTOCK_NAME=$(basename ${BUILD_REPOSITORY_NAME})
+
+        .scripts/run_osx_build.sh'
+      env:
+        ANACONDA_TOKEN: $(ANACONDA_TOKEN)
+        CURRENT_BUILD_PKG_NAME: ros-melodic-genpy
+      displayName: Build ros-melodic-genpy
+  - job: ros_melodic_cpp_common
+    steps:
+    - script: 'export CI=azure
+
+        export GIT_BRANCH=$BUILD_SOURCEBRANCHNAME
+
+        export FEEDSTOCK_NAME=$(basename ${BUILD_REPOSITORY_NAME})
+
+        .scripts/run_osx_build.sh'
+      env:
+        ANACONDA_TOKEN: $(ANACONDA_TOKEN)
+        CURRENT_BUILD_PKG_NAME: ros-melodic-cpp-common
+      displayName: Build ros-melodic-cpp-common
+- stage: stage_3
+  jobs:
+  - job: ros_melodic_rostime
+    steps:
+    - script: 'export CI=azure
+
+        export GIT_BRANCH=$BUILD_SOURCEBRANCHNAME
+
+        export FEEDSTOCK_NAME=$(basename ${BUILD_REPOSITORY_NAME})
+
+        .scripts/run_osx_build.sh'
+      env:
+        ANACONDA_TOKEN: $(ANACONDA_TOKEN)
+        CURRENT_BUILD_PKG_NAME: ros-melodic-rostime
+      displayName: Build ros-melodic-rostime
+- stage: stage_4
+  jobs:
+  - job: ros_melodic_roscpp_traits
+    steps:
+    - script: 'export CI=azure
+
+        export GIT_BRANCH=$BUILD_SOURCEBRANCHNAME
+
+        export FEEDSTOCK_NAME=$(basename ${BUILD_REPOSITORY_NAME})
+
+        .scripts/run_osx_build.sh'
+      env:
+        ANACONDA_TOKEN: $(ANACONDA_TOKEN)
+        CURRENT_BUILD_PKG_NAME: ros-melodic-roscpp-traits
+      displayName: Build ros-melodic-roscpp-traits
+- stage: stage_5
+  jobs:
+  - job: ros_melodic_roscpp_serialization
+    steps:
+    - script: 'export CI=azure
+
+        export GIT_BRANCH=$BUILD_SOURCEBRANCHNAME
+
+        export FEEDSTOCK_NAME=$(basename ${BUILD_REPOSITORY_NAME})
+
+        .scripts/run_osx_build.sh'
+      env:
+        ANACONDA_TOKEN: $(ANACONDA_TOKEN)
+        CURRENT_BUILD_PKG_NAME: ros-melodic-roscpp-serialization
+      displayName: Build ros-melodic-roscpp-serialization
+- stage: stage_6
+  jobs:
+  - job: ros_melodic_message_runtime
+    steps:
+    - script: 'export CI=azure
+
+        export GIT_BRANCH=$BUILD_SOURCEBRANCHNAME
+
+        export FEEDSTOCK_NAME=$(basename ${BUILD_REPOSITORY_NAME})
+
+        .scripts/run_osx_build.sh'
+      env:
+        ANACONDA_TOKEN: $(ANACONDA_TOKEN)
+        CURRENT_BUILD_PKG_NAME: ros-melodic-message-runtime
+      displayName: Build ros-melodic-message-runtime
