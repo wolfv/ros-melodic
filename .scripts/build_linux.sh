@@ -7,8 +7,8 @@
 
 set -xuo pipefail
 export PYTHONUNBUFFERED=1
-# export FEEDSTOCK_ROOT="${FEEDSTOCK_ROOT:-/home/conda/feedstock_root}"
-# export RECIPE_ROOT="${RECIPE_ROOT:-/home/conda/recipe_root}"
+export FEEDSTOCK_ROOT="${FEEDSTOCK_ROOT:-/home/conda/feedstock_root}"
+export RECIPE_ROOT="${RECIPE_ROOT:-/home/conda/recipe_root}"
 # export CI_SUPPORT="${FEEDSTOCK_ROOT}/.ci_support"
 # export CONFIG_FILE="${CI_SUPPORT}/${CONFIG}.yaml"
 
@@ -17,7 +17,7 @@ conda-build:
     root-dir: /opt/conda/build_artifacts
 CONDARC
 
-sudo yum install -y install mesa-libGL-devel
+# sudo yum install -y install mesa-libGL-devel
 
 conda install --yes --quiet boa quetz-client conda-build pip anaconda-client -c conda-forge/label/boa_dev  -c conda-forge
 
@@ -48,16 +48,15 @@ conda list --show-channel-urls
 pwd
 
 cd ${FEEDSTOCK_ROOT}
-
-pip install -e .
-
-cd examples
-vinca
+cp recipes/${CURRENT_BUILD_PKG_NAME}.yaml ./recipe.yaml
+# pip install -e .
+# cd examples
+# vinca
 
 boa build .
 
-anaconda -t ${ANACONDA_API_TOKEN} upload /opt/conda/build_artifacts/linux-64/*.tar.bz2 --force
-quetz-client "${QUETZ_URL}" /opt/conda/build_artifacts --force
+# anaconda -t ${ANACONDA_API_TOKEN} upload /opt/conda/build_artifacts/linux-64/*.tar.bz2 --force
+# quetz-client "${QUETZ_URL}" /opt/conda/build_artifacts --force
 
 # set up the condarc
 
