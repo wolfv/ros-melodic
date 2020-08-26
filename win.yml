@@ -10,7 +10,7 @@ stages:
     steps:
     - task: CondaEnvironment@1
       inputs:
-        packageSpecs: python=3.7 conda-build conda conda-forge::conda-forge-ci-setup=3
+        packageSpecs: python=3.7 libarchive conda-build conda conda-forge::conda-forge-ci-setup=3
           pip boa quetz-client
         installOptions: -c conda-forge -c conda-forge/label/boa_dev
         updateConda: true
@@ -67,7 +67,7 @@ stages:
     steps:
     - task: CondaEnvironment@1
       inputs:
-        packageSpecs: python=3.7 conda-build conda conda-forge::conda-forge-ci-setup=3
+        packageSpecs: python=3.7 libarchive conda-build conda conda-forge::conda-forge-ci-setup=3
           pip boa quetz-client
         installOptions: -c conda-forge -c conda-forge/label/boa_dev
         updateConda: true
@@ -124,7 +124,7 @@ stages:
     steps:
     - task: CondaEnvironment@1
       inputs:
-        packageSpecs: python=3.7 conda-build conda conda-forge::conda-forge-ci-setup=3
+        packageSpecs: python=3.7 libarchive conda-build conda conda-forge::conda-forge-ci-setup=3
           pip boa quetz-client
         installOptions: -c conda-forge -c conda-forge/label/boa_dev
         updateConda: true
@@ -179,7 +179,7 @@ stages:
     steps:
     - task: CondaEnvironment@1
       inputs:
-        packageSpecs: python=3.7 conda-build conda conda-forge::conda-forge-ci-setup=3
+        packageSpecs: python=3.7 libarchive conda-build conda conda-forge::conda-forge-ci-setup=3
           pip boa quetz-client
         installOptions: -c conda-forge -c conda-forge/label/boa_dev
         updateConda: true
@@ -236,7 +236,7 @@ stages:
     steps:
     - task: CondaEnvironment@1
       inputs:
-        packageSpecs: python=3.7 conda-build conda conda-forge::conda-forge-ci-setup=3
+        packageSpecs: python=3.7 libarchive conda-build conda conda-forge::conda-forge-ci-setup=3
           pip boa quetz-client
         installOptions: -c conda-forge -c conda-forge/label/boa_dev
         updateConda: true
@@ -293,7 +293,7 @@ stages:
     steps:
     - task: CondaEnvironment@1
       inputs:
-        packageSpecs: python=3.7 conda-build conda conda-forge::conda-forge-ci-setup=3
+        packageSpecs: python=3.7 libarchive conda-build conda conda-forge::conda-forge-ci-setup=3
           pip boa quetz-client
         installOptions: -c conda-forge -c conda-forge/label/boa_dev
         updateConda: true
@@ -350,7 +350,7 @@ stages:
     steps:
     - task: CondaEnvironment@1
       inputs:
-        packageSpecs: python=3.7 conda-build conda conda-forge::conda-forge-ci-setup=3
+        packageSpecs: python=3.7 libarchive conda-build conda conda-forge::conda-forge-ci-setup=3
           pip boa quetz-client
         installOptions: -c conda-forge -c conda-forge/label/boa_dev
         updateConda: true
@@ -407,7 +407,7 @@ stages:
     steps:
     - task: CondaEnvironment@1
       inputs:
-        packageSpecs: python=3.7 conda-build conda conda-forge::conda-forge-ci-setup=3
+        packageSpecs: python=3.7 libarchive conda-build conda conda-forge::conda-forge-ci-setup=3
           pip boa quetz-client
         installOptions: -c conda-forge -c conda-forge/label/boa_dev
         updateConda: true
