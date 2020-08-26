@@ -1,7 +1,7 @@
 pool:
   vmImage: ubuntu-16.04
 trigger:
-- experimental
+- ''
 pr: none
 stages:
 - stage: stage_0
@@ -36,58 +36,6 @@ stages:
       displayName: Build ros-melodic-genmsg
 - stage: stage_2
   jobs:
-  - job: ros_melodic_gencpp
-    steps:
-    - script: 'export CI=azure
-
-        export GIT_BRANCH=$BUILD_SOURCEBRANCHNAME
-
-        export FEEDSTOCK_NAME=$(basename ${BUILD_REPOSITORY_NAME})
-
-        .scripts/run_docker_build.sh'
-      env:
-        ANACONDA_TOKEN: $(ANACONDA_TOKEN)
-        CURRENT_BUILD_PKG_NAME: ros-melodic-gencpp
-      displayName: Build ros-melodic-gencpp
-  - job: ros_melodic_geneus
-    steps:
-    - script: 'export CI=azure
-
-        export GIT_BRANCH=$BUILD_SOURCEBRANCHNAME
-
-        export FEEDSTOCK_NAME=$(basename ${BUILD_REPOSITORY_NAME})
-
-        .scripts/run_docker_build.sh'
-      env:
-        ANACONDA_TOKEN: $(ANACONDA_TOKEN)
-        CURRENT_BUILD_PKG_NAME: ros-melodic-geneus
-      displayName: Build ros-melodic-geneus
-  - job: ros_melodic_genlisp
-    steps:
-    - script: 'export CI=azure
-
-        export GIT_BRANCH=$BUILD_SOURCEBRANCHNAME
-
-        export FEEDSTOCK_NAME=$(basename ${BUILD_REPOSITORY_NAME})
-
-        .scripts/run_docker_build.sh'
-      env:
-        ANACONDA_TOKEN: $(ANACONDA_TOKEN)
-        CURRENT_BUILD_PKG_NAME: ros-melodic-genlisp
-      displayName: Build ros-melodic-genlisp
-  - job: ros_melodic_gennodejs
-    steps:
-    - script: 'export CI=azure
-
-        export GIT_BRANCH=$BUILD_SOURCEBRANCHNAME
-
-        export FEEDSTOCK_NAME=$(basename ${BUILD_REPOSITORY_NAME})
-
-        .scripts/run_docker_build.sh'
-      env:
-        ANACONDA_TOKEN: $(ANACONDA_TOKEN)
-        CURRENT_BUILD_PKG_NAME: ros-melodic-gennodejs
-      displayName: Build ros-melodic-gennodejs
   - job: ros_melodic_genpy
     steps:
     - script: 'export CI=azure
@@ -101,21 +49,6 @@ stages:
         ANACONDA_TOKEN: $(ANACONDA_TOKEN)
         CURRENT_BUILD_PKG_NAME: ros-melodic-genpy
       displayName: Build ros-melodic-genpy
-- stage: stage_3
-  jobs:
-  - job: ros_melodic_message_generation
-    steps:
-    - script: 'export CI=azure
-
-        export GIT_BRANCH=$BUILD_SOURCEBRANCHNAME
-
-        export FEEDSTOCK_NAME=$(basename ${BUILD_REPOSITORY_NAME})
-
-        .scripts/run_docker_build.sh'
-      env:
-        ANACONDA_TOKEN: $(ANACONDA_TOKEN)
-        CURRENT_BUILD_PKG_NAME: ros-melodic-message-generation
-      displayName: Build ros-melodic-message-generation
   - job: ros_melodic_cpp_common
     steps:
     - script: 'export CI=azure
@@ -129,7 +62,7 @@ stages:
         ANACONDA_TOKEN: $(ANACONDA_TOKEN)
         CURRENT_BUILD_PKG_NAME: ros-melodic-cpp-common
       displayName: Build ros-melodic-cpp-common
-- stage: stage_4
+- stage: stage_3
   jobs:
   - job: ros_melodic_rostime
     steps:
@@ -144,7 +77,7 @@ stages:
         ANACONDA_TOKEN: $(ANACONDA_TOKEN)
         CURRENT_BUILD_PKG_NAME: ros-melodic-rostime
       displayName: Build ros-melodic-rostime
-- stage: stage_5
+- stage: stage_4
   jobs:
   - job: ros_melodic_roscpp_traits
     steps:
@@ -159,7 +92,7 @@ stages:
         ANACONDA_TOKEN: $(ANACONDA_TOKEN)
         CURRENT_BUILD_PKG_NAME: ros-melodic-roscpp-traits
       displayName: Build ros-melodic-roscpp-traits
-- stage: stage_6
+- stage: stage_5
   jobs:
   - job: ros_melodic_roscpp_serialization
     steps:
@@ -174,7 +107,7 @@ stages:
         ANACONDA_TOKEN: $(ANACONDA_TOKEN)
         CURRENT_BUILD_PKG_NAME: ros-melodic-roscpp-serialization
       displayName: Build ros-melodic-roscpp-serialization
-- stage: stage_7
+- stage: stage_6
   jobs:
   - job: ros_melodic_message_runtime
     steps:
@@ -189,186 +122,3 @@ stages:
         ANACONDA_TOKEN: $(ANACONDA_TOKEN)
         CURRENT_BUILD_PKG_NAME: ros-melodic-message-runtime
       displayName: Build ros-melodic-message-runtime
-- stage: stage_8
-  jobs:
-  - job: ros_melodic_rosbuild
-    steps:
-    - script: 'export CI=azure
-
-        export GIT_BRANCH=$BUILD_SOURCEBRANCHNAME
-
-        export FEEDSTOCK_NAME=$(basename ${BUILD_REPOSITORY_NAME})
-
-        .scripts/run_docker_build.sh'
-      env:
-        ANACONDA_TOKEN: $(ANACONDA_TOKEN)
-        CURRENT_BUILD_PKG_NAME: ros-melodic-rosbuild
-      displayName: Build ros-melodic-rosbuild
-  - job: ros_melodic_rosmake
-    steps:
-    - script: 'export CI=azure
-
-        export GIT_BRANCH=$BUILD_SOURCEBRANCHNAME
-
-        export FEEDSTOCK_NAME=$(basename ${BUILD_REPOSITORY_NAME})
-
-        .scripts/run_docker_build.sh'
-      env:
-        ANACONDA_TOKEN: $(ANACONDA_TOKEN)
-        CURRENT_BUILD_PKG_NAME: ros-melodic-rosmake
-      displayName: Build ros-melodic-rosmake
-  - job: ros_melodic_cmake_modules
-    steps:
-    - script: 'export CI=azure
-
-        export GIT_BRANCH=$BUILD_SOURCEBRANCHNAME
-
-        export FEEDSTOCK_NAME=$(basename ${BUILD_REPOSITORY_NAME})
-
-        .scripts/run_docker_build.sh'
-      env:
-        ANACONDA_TOKEN: $(ANACONDA_TOKEN)
-        CURRENT_BUILD_PKG_NAME: ros-melodic-cmake-modules
-      displayName: Build ros-melodic-cmake-modules
-  - job: ros_melodic_ros_environment
-    steps:
-    - script: 'export CI=azure
-
-        export GIT_BRANCH=$BUILD_SOURCEBRANCHNAME
-
-        export FEEDSTOCK_NAME=$(basename ${BUILD_REPOSITORY_NAME})
-
-        .scripts/run_docker_build.sh'
-      env:
-        ANACONDA_TOKEN: $(ANACONDA_TOKEN)
-        CURRENT_BUILD_PKG_NAME: ros-melodic-ros-environment
-      displayName: Build ros-melodic-ros-environment
-- stage: stage_9
-  jobs:
-  - job: ros_melodic_rospack
-    steps:
-    - script: 'export CI=azure
-
-        export GIT_BRANCH=$BUILD_SOURCEBRANCHNAME
-
-        export FEEDSTOCK_NAME=$(basename ${BUILD_REPOSITORY_NAME})
-
-        .scripts/run_docker_build.sh'
-      env:
-        ANACONDA_TOKEN: $(ANACONDA_TOKEN)
-        CURRENT_BUILD_PKG_NAME: ros-melodic-rospack
-      displayName: Build ros-melodic-rospack
-- stage: stage_10
-  jobs:
-  - job: ros_melodic_roslib
-    steps:
-    - script: 'export CI=azure
-
-        export GIT_BRANCH=$BUILD_SOURCEBRANCHNAME
-
-        export FEEDSTOCK_NAME=$(basename ${BUILD_REPOSITORY_NAME})
-
-        .scripts/run_docker_build.sh'
-      env:
-        ANACONDA_TOKEN: $(ANACONDA_TOKEN)
-        CURRENT_BUILD_PKG_NAME: ros-melodic-roslib
-      displayName: Build ros-melodic-roslib
-- stage: stage_11
-  jobs:
-  - job: ros_melodic_rosunit
-    steps:
-    - script: 'export CI=azure
-
-        export GIT_BRANCH=$BUILD_SOURCEBRANCHNAME
-
-        export FEEDSTOCK_NAME=$(basename ${BUILD_REPOSITORY_NAME})
-
-        .scripts/run_docker_build.sh'
-      env:
-        ANACONDA_TOKEN: $(ANACONDA_TOKEN)
-        CURRENT_BUILD_PKG_NAME: ros-melodic-rosunit
-      displayName: Build ros-melodic-rosunit
-- stage: stage_12
-  jobs:
-  - job: ros_melodic_rosconsole
-    steps:
-    - script: 'export CI=azure
-
-        export GIT_BRANCH=$BUILD_SOURCEBRANCHNAME
-
-        export FEEDSTOCK_NAME=$(basename ${BUILD_REPOSITORY_NAME})
-
-        .scripts/run_docker_build.sh'
-      env:
-        ANACONDA_TOKEN: $(ANACONDA_TOKEN)
-        CURRENT_BUILD_PKG_NAME: ros-melodic-rosconsole
-      displayName: Build ros-melodic-rosconsole
-  - job: ros_melodic_std_msgs
-    steps:
-    - script: 'export CI=azure
-
-        export GIT_BRANCH=$BUILD_SOURCEBRANCHNAME
-
-        export FEEDSTOCK_NAME=$(basename ${BUILD_REPOSITORY_NAME})
-
-        .scripts/run_docker_build.sh'
-      env:
-        ANACONDA_TOKEN: $(ANACONDA_TOKEN)
-        CURRENT_BUILD_PKG_NAME: ros-melodic-std-msgs
-      displayName: Build ros-melodic-std-msgs
-- stage: stage_13
-  jobs:
-  - job: ros_melodic_rosgraph_msgs
-    steps:
-    - script: 'export CI=azure
-
-        export GIT_BRANCH=$BUILD_SOURCEBRANCHNAME
-
-        export FEEDSTOCK_NAME=$(basename ${BUILD_REPOSITORY_NAME})
-
-        .scripts/run_docker_build.sh'
-      env:
-        ANACONDA_TOKEN: $(ANACONDA_TOKEN)
-        CURRENT_BUILD_PKG_NAME: ros-melodic-rosgraph-msgs
-      displayName: Build ros-melodic-rosgraph-msgs
-  - job: ros_melodic_roslang
-    steps:
-    - script: 'export CI=azure
-
-        export GIT_BRANCH=$BUILD_SOURCEBRANCHNAME
-
-        export FEEDSTOCK_NAME=$(basename ${BUILD_REPOSITORY_NAME})
-
-        .scripts/run_docker_build.sh'
-      env:
-        ANACONDA_TOKEN: $(ANACONDA_TOKEN)
-        CURRENT_BUILD_PKG_NAME: ros-melodic-roslang
-      displayName: Build ros-melodic-roslang
-  - job: ros_melodic_xmlrpcpp
-    steps:
-    - script: 'export CI=azure
-
-        export GIT_BRANCH=$BUILD_SOURCEBRANCHNAME
-
-        export FEEDSTOCK_NAME=$(basename ${BUILD_REPOSITORY_NAME})
-
-        .scripts/run_docker_build.sh'
-      env:
-        ANACONDA_TOKEN: $(ANACONDA_TOKEN)
-        CURRENT_BUILD_PKG_NAME: ros-melodic-xmlrpcpp
-      displayName: Build ros-melodic-xmlrpcpp
-- stage: stage_14
-  jobs:
-  - job: ros_melodic_roscpp
-    steps:
-    - script: 'export CI=azure
-
-        export GIT_BRANCH=$BUILD_SOURCEBRANCHNAME
-
-        export FEEDSTOCK_NAME=$(basename ${BUILD_REPOSITORY_NAME})
-
-        .scripts/run_docker_build.sh'
-      env:
-        ANACONDA_TOKEN: $(ANACONDA_TOKEN)
-        CURRENT_BUILD_PKG_NAME: ros-melodic-roscpp
-      displayName: Build ros-melodic-roscpp
