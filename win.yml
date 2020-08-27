@@ -23,6 +23,14 @@ stages:
 
         call activate base
 
+        run_conda_forge_build_setup'
+      displayName: conda-forge build setup
+    - script: '
+
+        set "CI=azure"
+
+        call activate base
+
 
         @rem git clone https://github.com/thesnakepit/boa
 
@@ -76,6 +84,14 @@ stages:
         installOptions: -c conda-forge/label/boa_dev -c conda-forge
         updateConda: true
       displayName: Install conda-build, boa and activate environment
+    - script: '
+
+        set "CI=azure"
+
+        call activate base
+
+        run_conda_forge_build_setup'
+      displayName: conda-forge build setup
     - script: '
 
         set "CI=azure"
@@ -141,6 +157,14 @@ stages:
 
         call activate base
 
+        run_conda_forge_build_setup'
+      displayName: conda-forge build setup
+    - script: '
+
+        set "CI=azure"
+
+        call activate base
+
 
         @rem git clone https://github.com/thesnakepit/boa
 
@@ -192,6 +216,14 @@ stages:
         installOptions: -c conda-forge/label/boa_dev -c conda-forge
         updateConda: true
       displayName: Install conda-build, boa and activate environment
+    - script: '
+
+        set "CI=azure"
+
+        call activate base
+
+        run_conda_forge_build_setup'
+      displayName: conda-forge build setup
     - script: '
 
         set "CI=azure"
@@ -257,6 +289,14 @@ stages:
 
         call activate base
 
+        run_conda_forge_build_setup'
+      displayName: conda-forge build setup
+    - script: '
+
+        set "CI=azure"
+
+        call activate base
+
 
         @rem git clone https://github.com/thesnakepit/boa
 
@@ -310,6 +350,14 @@ stages:
         installOptions: -c conda-forge/label/boa_dev -c conda-forge
         updateConda: true
       displayName: Install conda-build, boa and activate environment
+    - script: '
+
+        set "CI=azure"
+
+        call activate base
+
+        run_conda_forge_build_setup'
+      displayName: conda-forge build setup
     - script: '
 
         set "CI=azure"
@@ -375,6 +423,14 @@ stages:
 
         call activate base
 
+        run_conda_forge_build_setup'
+      displayName: conda-forge build setup
+    - script: '
+
+        set "CI=azure"
+
+        call activate base
+
 
         @rem git clone https://github.com/thesnakepit/boa
 
@@ -428,6 +484,14 @@ stages:
         installOptions: -c conda-forge/label/boa_dev -c conda-forge
         updateConda: true
       displayName: Install conda-build, boa and activate environment
+    - script: '
+
+        set "CI=azure"
+
+        call activate base
+
+        run_conda_forge_build_setup'
+      displayName: conda-forge build setup
     - script: '
 
         set "CI=azure"
