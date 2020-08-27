@@ -10,11 +10,11 @@ stages:
     steps:
     - task: CondaEnvironment@1
       inputs:
-        packageSpecs: python=3.7 libarchive conda-build conda conda-forge::conda-forge-ci-setup=3
+        packageSpecs: python=3.6 conda-build conda conda-forge::conda-forge-ci-setup=3
           pip boa quetz-client
-        installOptions: -c conda-forge -c conda-forge/label/boa_dev
+        installOptions: -c conda-forge/label/boa_dev -c conda-forge
         updateConda: true
-      displayName: Install conda-build and activate environment
+      displayName: Install conda-build, boa and activate environment
     - script: '
 
         set "CI=azure"
@@ -67,11 +67,11 @@ stages:
     steps:
     - task: CondaEnvironment@1
       inputs:
-        packageSpecs: python=3.7 libarchive conda-build conda conda-forge::conda-forge-ci-setup=3
+        packageSpecs: python=3.6 conda-build conda conda-forge::conda-forge-ci-setup=3
           pip boa quetz-client
-        installOptions: -c conda-forge -c conda-forge/label/boa_dev
+        installOptions: -c conda-forge/label/boa_dev -c conda-forge
         updateConda: true
-      displayName: Install conda-build and activate environment
+      displayName: Install conda-build, boa and activate environment
     - script: '
 
         set "CI=azure"
@@ -124,11 +124,11 @@ stages:
     steps:
     - task: CondaEnvironment@1
       inputs:
-        packageSpecs: python=3.7 libarchive conda-build conda conda-forge::conda-forge-ci-setup=3
+        packageSpecs: python=3.6 conda-build conda conda-forge::conda-forge-ci-setup=3
           pip boa quetz-client
-        installOptions: -c conda-forge -c conda-forge/label/boa_dev
+        installOptions: -c conda-forge/label/boa_dev -c conda-forge
         updateConda: true
-      displayName: Install conda-build and activate environment
+      displayName: Install conda-build, boa and activate environment
     - script: '
 
         set "CI=azure"
@@ -179,11 +179,11 @@ stages:
     steps:
     - task: CondaEnvironment@1
       inputs:
-        packageSpecs: python=3.7 libarchive conda-build conda conda-forge::conda-forge-ci-setup=3
+        packageSpecs: python=3.6 conda-build conda conda-forge::conda-forge-ci-setup=3
           pip boa quetz-client
-        installOptions: -c conda-forge -c conda-forge/label/boa_dev
+        installOptions: -c conda-forge/label/boa_dev -c conda-forge
         updateConda: true
-      displayName: Install conda-build and activate environment
+      displayName: Install conda-build, boa and activate environment
     - script: '
 
         set "CI=azure"
@@ -236,11 +236,11 @@ stages:
     steps:
     - task: CondaEnvironment@1
       inputs:
-        packageSpecs: python=3.7 libarchive conda-build conda conda-forge::conda-forge-ci-setup=3
+        packageSpecs: python=3.6 conda-build conda conda-forge::conda-forge-ci-setup=3
           pip boa quetz-client
-        installOptions: -c conda-forge -c conda-forge/label/boa_dev
+        installOptions: -c conda-forge/label/boa_dev -c conda-forge
         updateConda: true
-      displayName: Install conda-build and activate environment
+      displayName: Install conda-build, boa and activate environment
     - script: '
 
         set "CI=azure"
@@ -293,11 +293,11 @@ stages:
     steps:
     - task: CondaEnvironment@1
       inputs:
-        packageSpecs: python=3.7 libarchive conda-build conda conda-forge::conda-forge-ci-setup=3
+        packageSpecs: python=3.6 conda-build conda conda-forge::conda-forge-ci-setup=3
           pip boa quetz-client
-        installOptions: -c conda-forge -c conda-forge/label/boa_dev
+        installOptions: -c conda-forge/label/boa_dev -c conda-forge
         updateConda: true
-      displayName: Install conda-build and activate environment
+      displayName: Install conda-build, boa and activate environment
     - script: '
 
         set "CI=azure"
@@ -350,11 +350,11 @@ stages:
     steps:
     - task: CondaEnvironment@1
       inputs:
-        packageSpecs: python=3.7 libarchive conda-build conda conda-forge::conda-forge-ci-setup=3
+        packageSpecs: python=3.6 conda-build conda conda-forge::conda-forge-ci-setup=3
           pip boa quetz-client
-        installOptions: -c conda-forge -c conda-forge/label/boa_dev
+        installOptions: -c conda-forge/label/boa_dev -c conda-forge
         updateConda: true
-      displayName: Install conda-build and activate environment
+      displayName: Install conda-build, boa and activate environment
     - script: '
 
         set "CI=azure"
@@ -407,11 +407,11 @@ stages:
     steps:
     - task: CondaEnvironment@1
       inputs:
-        packageSpecs: python=3.7 libarchive conda-build conda conda-forge::conda-forge-ci-setup=3
+        packageSpecs: python=3.6 conda-build conda conda-forge::conda-forge-ci-setup=3
           pip boa quetz-client
-        installOptions: -c conda-forge -c conda-forge/label/boa_dev
+        installOptions: -c conda-forge/label/boa_dev -c conda-forge
         updateConda: true
-      displayName: Install conda-build and activate environment
+      displayName: Install conda-build, boa and activate environment
     - script: '
 
         set "CI=azure"
