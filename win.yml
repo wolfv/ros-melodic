@@ -57,6 +57,10 @@ stages:
 
         conda config --show-sources
 
+
+        conda remove --force m2-git
+
+
         conda list --show-channel-urls
 
 
@@ -126,6 +130,10 @@ stages:
         conda info
 
         conda config --show-sources
+
+
+        conda remove --force m2-git
+
 
         conda list --show-channel-urls
 
@@ -197,6 +205,10 @@ stages:
 
         conda config --show-sources
 
+
+        conda remove --force m2-git
+
+
         conda list --show-channel-urls
 
 
@@ -264,6 +276,10 @@ stages:
         conda info
 
         conda config --show-sources
+
+
+        conda remove --force m2-git
+
 
         conda list --show-channel-urls
 
@@ -335,6 +351,10 @@ stages:
 
         conda config --show-sources
 
+
+        conda remove --force m2-git
+
+
         conda list --show-channel-urls
 
 
@@ -404,6 +424,10 @@ stages:
         conda info
 
         conda config --show-sources
+
+
+        conda remove --force m2-git
+
 
         conda list --show-channel-urls
 
@@ -475,6 +499,10 @@ stages:
 
         conda config --show-sources
 
+
+        conda remove --force m2-git
+
+
         conda list --show-channel-urls
 
 
@@ -544,6 +572,10 @@ stages:
         conda info
 
         conda config --show-sources
+
+
+        conda remove --force m2-git
+
 
         conda list --show-channel-urls
 
