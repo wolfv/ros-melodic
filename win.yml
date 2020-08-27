@@ -8,7 +8,7 @@ stages:
   jobs:
   - job: ros_melodic_catkin
     variables:
-      CONDA_BLD_PATH: D:\\bld\\
+      CONDA_BLD_PATH: C:\\bld\\
     steps:
     - task: CondaEnvironment@1
       inputs:
@@ -82,7 +82,7 @@ stages:
   jobs:
   - job: ros_melodic_genmsg
     variables:
-      CONDA_BLD_PATH: D:\\bld\\
+      CONDA_BLD_PATH: C:\\bld\\
     steps:
     - task: CondaEnvironment@1
       inputs:
@@ -156,7 +156,7 @@ stages:
   jobs:
   - job: ros_melodic_genpy
     variables:
-      CONDA_BLD_PATH: D:\\bld\\
+      CONDA_BLD_PATH: C:\\bld\\
     steps:
     - task: CondaEnvironment@1
       inputs:
@@ -228,7 +228,7 @@ stages:
       displayName: Build ros-melodic-genpy
   - job: ros_melodic_cpp_common
     variables:
-      CONDA_BLD_PATH: D:\\bld\\
+      CONDA_BLD_PATH: C:\\bld\\
     steps:
     - task: CondaEnvironment@1
       inputs:
@@ -302,7 +302,7 @@ stages:
   jobs:
   - job: ros_melodic_rostime
     variables:
-      CONDA_BLD_PATH: D:\\bld\\
+      CONDA_BLD_PATH: C:\\bld\\
     steps:
     - task: CondaEnvironment@1
       inputs:
@@ -376,7 +376,7 @@ stages:
   jobs:
   - job: ros_melodic_roscpp_traits
     variables:
-      CONDA_BLD_PATH: D:\\bld\\
+      CONDA_BLD_PATH: C:\\bld\\
     steps:
     - task: CondaEnvironment@1
       inputs:
@@ -450,7 +450,7 @@ stages:
   jobs:
   - job: ros_melodic_roscpp_serialization
     variables:
-      CONDA_BLD_PATH: D:\\bld\\
+      CONDA_BLD_PATH: C:\\bld\\
     steps:
     - task: CondaEnvironment@1
       inputs:
@@ -524,7 +524,7 @@ stages:
   jobs:
   - job: ros_melodic_message_runtime
     variables:
-      CONDA_BLD_PATH: D:\\bld\\
+      CONDA_BLD_PATH: C:\\bld\\
     steps:
     - task: CondaEnvironment@1
       inputs:
