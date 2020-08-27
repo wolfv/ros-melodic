@@ -17,9 +17,6 @@ stages:
         installOptions: -c conda-forge/label/boa_dev -c conda-forge
         updateConda: true
       displayName: Install conda-build, boa and activate environment
-    - script: rmdir C:\cygwin /s /q
-      displayName: Remove cygwin to make git work
-      continueOnError: true
     - script: '
 
         set "CI=azure"
@@ -53,15 +50,15 @@ stages:
         conda config --set channel_priority strict
 
 
-        conda info
+        @rem conda info
 
-        conda config --show-sources
+        @rem conda config --show-sources
 
 
         conda remove --force m2-git
 
 
-        conda list --show-channel-urls
+        @rem conda list --show-channel-urls
 
 
         cp recipes/%CURRENT_BUILD_PKG_NAME%.yaml ./recipe.yaml
@@ -91,9 +88,6 @@ stages:
         installOptions: -c conda-forge/label/boa_dev -c conda-forge
         updateConda: true
       displayName: Install conda-build, boa and activate environment
-    - script: rmdir C:\cygwin /s /q
-      displayName: Remove cygwin to make git work
-      continueOnError: true
     - script: '
 
         set "CI=azure"
@@ -127,15 +121,15 @@ stages:
         conda config --set channel_priority strict
 
 
-        conda info
+        @rem conda info
 
-        conda config --show-sources
+        @rem conda config --show-sources
 
 
         conda remove --force m2-git
 
 
-        conda list --show-channel-urls
+        @rem conda list --show-channel-urls
 
 
         cp recipes/%CURRENT_BUILD_PKG_NAME%.yaml ./recipe.yaml
@@ -165,9 +159,6 @@ stages:
         installOptions: -c conda-forge/label/boa_dev -c conda-forge
         updateConda: true
       displayName: Install conda-build, boa and activate environment
-    - script: rmdir C:\cygwin /s /q
-      displayName: Remove cygwin to make git work
-      continueOnError: true
     - script: '
 
         set "CI=azure"
@@ -201,15 +192,15 @@ stages:
         conda config --set channel_priority strict
 
 
-        conda info
+        @rem conda info
 
-        conda config --show-sources
+        @rem conda config --show-sources
 
 
         conda remove --force m2-git
 
 
-        conda list --show-channel-urls
+        @rem conda list --show-channel-urls
 
 
         cp recipes/%CURRENT_BUILD_PKG_NAME%.yaml ./recipe.yaml
@@ -237,9 +228,6 @@ stages:
         installOptions: -c conda-forge/label/boa_dev -c conda-forge
         updateConda: true
       displayName: Install conda-build, boa and activate environment
-    - script: rmdir C:\cygwin /s /q
-      displayName: Remove cygwin to make git work
-      continueOnError: true
     - script: '
 
         set "CI=azure"
@@ -273,15 +261,15 @@ stages:
         conda config --set channel_priority strict
 
 
-        conda info
+        @rem conda info
 
-        conda config --show-sources
+        @rem conda config --show-sources
 
 
         conda remove --force m2-git
 
 
-        conda list --show-channel-urls
+        @rem conda list --show-channel-urls
 
 
         cp recipes/%CURRENT_BUILD_PKG_NAME%.yaml ./recipe.yaml
@@ -311,9 +299,6 @@ stages:
         installOptions: -c conda-forge/label/boa_dev -c conda-forge
         updateConda: true
       displayName: Install conda-build, boa and activate environment
-    - script: rmdir C:\cygwin /s /q
-      displayName: Remove cygwin to make git work
-      continueOnError: true
     - script: '
 
         set "CI=azure"
@@ -347,15 +332,15 @@ stages:
         conda config --set channel_priority strict
 
 
-        conda info
+        @rem conda info
 
-        conda config --show-sources
+        @rem conda config --show-sources
 
 
         conda remove --force m2-git
 
 
-        conda list --show-channel-urls
+        @rem conda list --show-channel-urls
 
 
         cp recipes/%CURRENT_BUILD_PKG_NAME%.yaml ./recipe.yaml
@@ -385,9 +370,6 @@ stages:
         installOptions: -c conda-forge/label/boa_dev -c conda-forge
         updateConda: true
       displayName: Install conda-build, boa and activate environment
-    - script: rmdir C:\cygwin /s /q
-      displayName: Remove cygwin to make git work
-      continueOnError: true
     - script: '
 
         set "CI=azure"
@@ -421,15 +403,15 @@ stages:
         conda config --set channel_priority strict
 
 
-        conda info
+        @rem conda info
 
-        conda config --show-sources
+        @rem conda config --show-sources
 
 
         conda remove --force m2-git
 
 
-        conda list --show-channel-urls
+        @rem conda list --show-channel-urls
 
 
         cp recipes/%CURRENT_BUILD_PKG_NAME%.yaml ./recipe.yaml
@@ -459,9 +441,6 @@ stages:
         installOptions: -c conda-forge/label/boa_dev -c conda-forge
         updateConda: true
       displayName: Install conda-build, boa and activate environment
-    - script: rmdir C:\cygwin /s /q
-      displayName: Remove cygwin to make git work
-      continueOnError: true
     - script: '
 
         set "CI=azure"
@@ -495,15 +474,15 @@ stages:
         conda config --set channel_priority strict
 
 
-        conda info
+        @rem conda info
 
-        conda config --show-sources
+        @rem conda config --show-sources
 
 
         conda remove --force m2-git
 
 
-        conda list --show-channel-urls
+        @rem conda list --show-channel-urls
 
 
         cp recipes/%CURRENT_BUILD_PKG_NAME%.yaml ./recipe.yaml
@@ -533,9 +512,6 @@ stages:
         installOptions: -c conda-forge/label/boa_dev -c conda-forge
         updateConda: true
       displayName: Install conda-build, boa and activate environment
-    - script: rmdir C:\cygwin /s /q
-      displayName: Remove cygwin to make git work
-      continueOnError: true
     - script: '
 
         set "CI=azure"
@@ -569,15 +545,15 @@ stages:
         conda config --set channel_priority strict
 
 
-        conda info
+        @rem conda info
 
-        conda config --show-sources
+        @rem conda config --show-sources
 
 
         conda remove --force m2-git
 
 
-        conda list --show-channel-urls
+        @rem conda list --show-channel-urls
 
 
         cp recipes/%CURRENT_BUILD_PKG_NAME%.yaml ./recipe.yaml
