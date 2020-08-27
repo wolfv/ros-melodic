@@ -7,7 +7,9 @@ source:
   folder: ros-melodic-roscpp-serialization/src/work
 
 build:
-  script: build_catkin.sh
+  script:
+    sel(win): bld_catkin.bat
+    sel(unix): build_catkin.sh
   number: 1
 about:
   home: https://www.ros.org/

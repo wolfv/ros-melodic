@@ -9,7 +9,9 @@ source:
     - patch/ros-melodic-rostime.patch
 
 build:
-  script: build_catkin.sh
+  script:
+    sel(win): bld_catkin.bat
+    sel(unix): build_catkin.sh
   number: 1
 about:
   home: https://www.ros.org/
