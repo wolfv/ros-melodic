@@ -7,6 +7,8 @@ stages:
 - stage: stage_0
   jobs:
   - job: ros_melodic_catkin
+    variables:
+      CONDA_BLD_PATH: D:\\bld\\
     steps:
     - task: CondaEnvironment@1
       inputs:
@@ -64,6 +66,8 @@ stages:
 - stage: stage_1
   jobs:
   - job: ros_melodic_genmsg
+    variables:
+      CONDA_BLD_PATH: D:\\bld\\
     steps:
     - task: CondaEnvironment@1
       inputs:
@@ -121,6 +125,8 @@ stages:
 - stage: stage_2
   jobs:
   - job: ros_melodic_genpy
+    variables:
+      CONDA_BLD_PATH: D:\\bld\\
     steps:
     - task: CondaEnvironment@1
       inputs:
@@ -176,6 +182,8 @@ stages:
         PYTHONUNBUFFERED: 1
       displayName: Build ros-melodic-genpy
   - job: ros_melodic_cpp_common
+    variables:
+      CONDA_BLD_PATH: D:\\bld\\
     steps:
     - task: CondaEnvironment@1
       inputs:
@@ -233,6 +241,8 @@ stages:
 - stage: stage_3
   jobs:
   - job: ros_melodic_rostime
+    variables:
+      CONDA_BLD_PATH: D:\\bld\\
     steps:
     - task: CondaEnvironment@1
       inputs:
@@ -290,6 +300,8 @@ stages:
 - stage: stage_4
   jobs:
   - job: ros_melodic_roscpp_traits
+    variables:
+      CONDA_BLD_PATH: D:\\bld\\
     steps:
     - task: CondaEnvironment@1
       inputs:
@@ -347,6 +359,8 @@ stages:
 - stage: stage_5
   jobs:
   - job: ros_melodic_roscpp_serialization
+    variables:
+      CONDA_BLD_PATH: D:\\bld\\
     steps:
     - task: CondaEnvironment@1
       inputs:
@@ -404,6 +418,8 @@ stages:
 - stage: stage_6
   jobs:
   - job: ros_melodic_message_runtime
+    variables:
+      CONDA_BLD_PATH: D:\\bld\\
     steps:
     - task: CondaEnvironment@1
       inputs:
