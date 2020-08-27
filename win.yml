@@ -17,6 +17,9 @@ stages:
         installOptions: -c conda-forge/label/boa_dev -c conda-forge
         updateConda: true
       displayName: Install conda-build, boa and activate environment
+    - script: rmdir C:\cygwin /s /q
+      displayName: Remove cygwin to make git work
+      continueOnError: true
     - script: '
 
         set "CI=azure"
@@ -84,6 +87,9 @@ stages:
         installOptions: -c conda-forge/label/boa_dev -c conda-forge
         updateConda: true
       displayName: Install conda-build, boa and activate environment
+    - script: rmdir C:\cygwin /s /q
+      displayName: Remove cygwin to make git work
+      continueOnError: true
     - script: '
 
         set "CI=azure"
@@ -151,6 +157,9 @@ stages:
         installOptions: -c conda-forge/label/boa_dev -c conda-forge
         updateConda: true
       displayName: Install conda-build, boa and activate environment
+    - script: rmdir C:\cygwin /s /q
+      displayName: Remove cygwin to make git work
+      continueOnError: true
     - script: '
 
         set "CI=azure"
@@ -216,6 +225,9 @@ stages:
         installOptions: -c conda-forge/label/boa_dev -c conda-forge
         updateConda: true
       displayName: Install conda-build, boa and activate environment
+    - script: rmdir C:\cygwin /s /q
+      displayName: Remove cygwin to make git work
+      continueOnError: true
     - script: '
 
         set "CI=azure"
@@ -283,6 +295,9 @@ stages:
         installOptions: -c conda-forge/label/boa_dev -c conda-forge
         updateConda: true
       displayName: Install conda-build, boa and activate environment
+    - script: rmdir C:\cygwin /s /q
+      displayName: Remove cygwin to make git work
+      continueOnError: true
     - script: '
 
         set "CI=azure"
@@ -350,6 +365,9 @@ stages:
         installOptions: -c conda-forge/label/boa_dev -c conda-forge
         updateConda: true
       displayName: Install conda-build, boa and activate environment
+    - script: rmdir C:\cygwin /s /q
+      displayName: Remove cygwin to make git work
+      continueOnError: true
     - script: '
 
         set "CI=azure"
@@ -417,6 +435,9 @@ stages:
         installOptions: -c conda-forge/label/boa_dev -c conda-forge
         updateConda: true
       displayName: Install conda-build, boa and activate environment
+    - script: rmdir C:\cygwin /s /q
+      displayName: Remove cygwin to make git work
+      continueOnError: true
     - script: '
 
         set "CI=azure"
@@ -484,6 +505,9 @@ stages:
         installOptions: -c conda-forge/label/boa_dev -c conda-forge
         updateConda: true
       displayName: Install conda-build, boa and activate environment
+    - script: rmdir C:\cygwin /s /q
+      displayName: Remove cygwin to make git work
+      continueOnError: true
     - script: '
 
         set "CI=azure"
